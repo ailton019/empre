@@ -7,406 +7,644 @@
     <meta name="description" content="Criação de sites profissionais modernos e de alto desempenho para pequenos e médios negócios. Design exclusivo, SEO e soluções integradas.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="./desenvolvedor.png" type="">
+    <link rel="icon" href="./logo-aionlabs.png" type="image/png">
     <!-- Fonts: Inter + Playfair Display para toque sofisticado -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0B0F19;
-            color: #FFFFFF;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
+    :root {
+        --primary: #00E65A;      /* Neon Forest Green */
+        --primary-rgb: 0, 230, 90;
+        --secondary: #FFD200;    /* Neon Golden Yellow */
+        --secondary-rgb: 255, 210, 0;
+        --accent: #2F80FF;       /* Neon Royal Blue */
+        --accent-rgb: 47, 128, 255;
+        --bg-primary: #040815;   /* Deep space navy background */
+        --bg-secondary: #0A122C; /* Navy card background */
+        --text-main: #FFFFFF;
+        --text-muted: #94A3B8;
+        --grad-brasil: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+        --grad-brasil-hover: linear-gradient(135deg, #00C84E 0%, #E6BC00 50%, #1A6FFF 100%);
+        --glass-bg: rgba(10, 18, 44, 0.65);
+        --glass-border: rgba(0, 230, 90, 0.15);
+        --glass-shadow: 0 25px 45px rgba(0, 0, 0, 0.55);
+        --border-radius-card: 1.5rem;
+    }
 
-        /* Glassmorphism e gradientes */
-        .glass-card {
-            background: rgba(17, 24, 39, 0.65);
-            backdrop-filter: blur(12px);
-            border-radius: 2rem;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--primary), var(--accent));
+        border-radius: 4px;
+    }
 
-        .glass-card:hover {
-            border-color: rgba(139, 92, 246, 0.6);
-            box-shadow: 0 25px 40px -12px rgba(139, 92, 246, 0.25);
-            transform: translateY(-6px);
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-main);
+        line-height: 1.5;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
+    /* Background Neon Blobs */
+    .blob-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: -1;
+        pointer-events: none;
+    }
+    .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.12;
+        animation: float-blob 20s infinite ease-in-out alternate;
+    }
+    .blob-green {
+        width: 450px;
+        height: 450px;
+        background: var(--primary);
+        top: -10%;
+        left: -10%;
+        animation-duration: 25s;
+    }
+    .blob-yellow {
+        width: 400px;
+        height: 400px;
+        background: var(--secondary);
+        bottom: -5%;
+        right: 15%;
+        animation-duration: 18s;
+        animation-delay: -5s;
+    }
+    .blob-blue {
+        width: 500px;
+        height: 500px;
+        background: var(--accent);
+        top: 35%;
+        right: -10%;
+        animation-duration: 22s;
+        animation-delay: -10s;
+    }
+    @keyframes float-blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(50px, 80px) scale(1.15); }
+        100% { transform: translate(-30px, -40px) scale(0.9); }
+    }
 
-        .btn-primary {
-            background: linear-gradient(95deg, #8B5CF6, #06B6D4);
-            border: none;
-            padding: 0.9rem 2rem;
-            border-radius: 3rem;
-            font-weight: 600;
-            color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.4);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-        }
+    /* Glassmorphic cards with Brasil borders */
+    .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(14px);
+        border-radius: var(--border-radius-card);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.15);
+    }
 
-        .btn-primary:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
-            background: linear-gradient(95deg, #7c3aed, #0891b2);
-        }
+    .glass-card:hover {
+        border-color: rgba(0, 230, 90, 0.4);
+        box-shadow: 0 25px 45px -10px rgba(0, 230, 90, 0.2);
+        transform: translateY(-6px);
+    }
 
-        .btn-outline-light {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 0.9rem 2rem;
-            border-radius: 3rem;
-            font-weight: 500;
-            color: white;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .gradient-text {
+        background: var(--grad-brasil);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
+    }
 
-        .btn-outline-light:hover {
-            background: rgba(139, 92, 246, 0.2);
-            border-color: #8B5CF6;
-        }
+    .btn-primary {
+        background: var(--grad-brasil);
+        border: none;
+        padding: 0.9rem 2.2rem;
+        border-radius: 3rem;
+        font-weight: 600;
+        color: #030712; /* Dark contrast color for readability on light/gradient buttons */
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        box-shadow: 0 4px 20px 0 rgba(0, 230, 90, 0.3);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
+    }
 
-        /* layout */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+    .btn-primary:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 25px rgba(0, 230, 90, 0.5);
+        background: var(--grad-brasil-hover);
+        color: #000;
+    }
 
-        section {
-            padding: 5rem 0;
-        }
+    .btn-outline-light {
+        background: transparent;
+        border: 1px solid rgba(0, 230, 90, 0.35);
+        padding: 0.9rem 2.2rem;
+        border-radius: 3rem;
+        font-weight: 500;
+        color: white;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-        }
-        .section-sub {
-            text-align: center;
-            color: #94A3B8;
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
-        }
+    .btn-outline-light:hover {
+        background: rgba(0, 230, 90, 0.08);
+        border-color: var(--primary);
+        box-shadow: 0 0 15px rgba(0, 230, 90, 0.2);
+    }
 
-        /* navbar fixa */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(16px);
-            z-index: 1000;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-            transition: 0.3s;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: auto;
-        }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        .logo span {
-            background: linear-gradient(125deg, #8B5CF6, #06B6D4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
+    /* Layout settings */
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    section {
+        padding: 6rem 0;
+        position: relative;
+    }
+
+    .section-title {
+        font-size: 2.75rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+        letter-spacing: -0.01em;
+    }
+
+    .section-sub {
+        text-align: center;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto 3.5rem auto;
+        font-size: 1.05rem;
+    }
+
+    /* Navigation bar */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(4, 8, 21, 0.85);
+        backdrop-filter: blur(16px);
+        z-index: 1000;
+        padding: 0.75rem 2rem;
+        border-bottom: 1px solid rgba(0, 230, 90, 0.15);
+        transition: all 0.3s;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .logo-capsule {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 6px 14px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 230, 90, 0.15);
+        transition: all 0.3s;
+    }
+
+    .logo-capsule:hover {
+        background: #FFFFFF;
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 230, 90, 0.25);
+    }
+
+    .logo-capsule img {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .menu-icon {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    @media (max-width: 800px) {
         .nav-links {
-            display: flex;
+            position: fixed;
+            top: 72px;
+            left: -100%;
+            flex-direction: column;
+            background: rgba(4, 8, 21, 0.96);
+            backdrop-filter: blur(20px);
+            width: 75%;
+            height: calc(100vh - 72px);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
             gap: 2rem;
+            border-right: 1px solid rgba(0, 230, 90, 0.25);
         }
-        .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-        .nav-links a:hover {
-            color: #8B5CF6;
+        .nav-links.active {
+            left: 0;
         }
         .menu-icon {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
+            display: block;
         }
-        @media (max-width: 800px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                flex-direction: column;
-                background: #111827ee;
-                backdrop-filter: blur(20px);
-                width: 70%;
-                height: calc(100vh - 70px);
-                padding: 2rem;
-                transition: 0.3s;
-                gap: 1.8rem;
-                border-right: 1px solid #8B5CF6;
-            }
-            .nav-links.active {
-                left: 0;
-            }
-            .menu-icon {
-                display: block;
-            }
-            .container {
-                padding: 0 1.5rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
+        .container {
+            padding: 0 1.5rem;
         }
+        .section-title {
+            font-size: 2.2rem;
+        }
+    }
 
-        /* hero com efeito luz */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-glow {
-            position: absolute;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(139,92,246,0.3) 0%, rgba(6,182,212,0) 70%);
-            top: -20%;
-            right: -10%;
-            filter: blur(70px);
-            z-index: 0;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .floating-card {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
+    /* Hero section with RedBull style slideshow */
+    .hero {
+        min-height: 95vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding-top: 8rem;
+        background: #02040a;
+    }
 
-        /* grade diferencial */
-        .grid-3, .grid-4, .grid-solucoes {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .diff-card, .segment-card, .solution-card, .testimonial-card, .why-card {
-            background: #111827;
-            padding: 1.8rem;
-            border-radius: 1.5rem;
-            transition: all 0.3s;
-            border: 1px solid #1f2937;
-        }
-        .diff-card i, .segment-card i, .solution-card i {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
+    .hero-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
 
-        /* filtros portfolio */
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-bottom: 2.5rem;
-        }
-        .filter-btn {
-            background: #1e293b;
-            border: none;
-            padding: 0.5rem 1.5rem;
-            border-radius: 3rem;
-            color: #cbd5e1;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background: #8B5CF6;
-            color: white;
-        }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .portfolio-item {
-            background: #0F172A;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-        .mockup-img {
-            background: linear-gradient(145deg, #1E293B, #0B0F19);
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #8B5CF6;
-            border-bottom: 2px solid #334155;
-        }
+    .hero-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 1.2s ease-in-out;
+        transform: scale(1.05);
+    }
 
-        /* timeline */
-        .timeline {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        .step {
-            flex: 1;
-            min-width: 150px;
-            background: rgba(17,24,39,0.7);
-            backdrop-filter: blur(4px);
-            border-radius: 2rem;
-            padding: 1.5rem;
-            text-align: center;
-        }
+    .hero-slide.active {
+        opacity: 1;
+        animation: kenburns 8s infinite linear;
+    }
 
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 99;
-            transition: 0.2s;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background: #128C7E;
-        }
-        footer {
-            background: #050a12;
-            padding: 3rem 0;
-            border-top: 1px solid #1e293b;
-        }
-        [data-reveal] {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s ease;
-        }
-        [data-reveal].revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    @keyframes kenburns {
+        0% { transform: scale(1.05); }
+        100% { transform: scale(1.12); }
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(4, 8, 21, 0.75) 0%, rgba(4, 8, 21, 0.85) 60%, rgba(4, 8, 21, 0.95) 100%);
+        z-index: 2;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+    }
+
+    .floating-card {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* Slideshow dots indicators */
+    .slide-dots {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.75rem;
+        z-index: 5;
+    }
+
+    .slide-dot {
+        width: 32px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slide-dot.active {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    .slide-dot.active::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--primary);
+        animation: progress-bar 6s linear forwards;
+    }
+
+    @keyframes progress-bar {
+        0% { width: 0; }
+        100% { width: 100%; }
+    }
+
+    /* Card grids and components */
+    .grid-3, .grid-4, .grid-solucoes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .diff-card, .segment-card, .solution-card, .testimonial-card, .why-card {
+        background: rgba(10, 18, 44, 0.45);
+        padding: 2rem;
+        border-radius: 1.5rem;
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .diff-card:hover, .segment-card:hover, .solution-card:hover, .why-card:hover {
+        border-color: rgba(0, 230, 90, 0.35);
+        background: rgba(10, 18, 44, 0.7);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 230, 90, 0.08);
+    }
+
+    .diff-card i, .segment-card i, .solution-card i {
+        font-size: 2.5rem;
+        background: var(--grad-brasil);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Interactive Quote Simulator styles */
+    .simulator-option, .simulator-checkbox {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        width: 100%;
+    }
+    .simulator-option input, .simulator-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    .option-content {
+        background: rgba(10, 18, 44, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1.2rem;
+        padding: 1.1rem 1.4rem;
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .simulator-option input:checked ~ .option-content {
+        border-color: var(--primary);
+        background: rgba(0, 230, 90, 0.07);
+        box-shadow: 0 0 20px rgba(0, 230, 90, 0.15);
+    }
+    .option-content:hover {
+        border-color: rgba(0, 230, 90, 0.4);
+    }
+    .checkbox-content {
+        background: rgba(10, 18, 44, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        padding: 1rem 1.4rem;
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .simulator-checkbox input:checked ~ .checkbox-content {
+        border-color: var(--accent);
+        background: rgba(47, 128, 255, 0.07);
+        box-shadow: 0 0 20px rgba(47, 128, 255, 0.15);
+    }
+    .checkbox-content:hover {
+        border-color: rgba(47, 128, 255, 0.4);
+    }
+
+    /* Timeline and Steps */
+    .timeline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .step {
+        flex: 1;
+        min-width: 170px;
+        background: rgba(10, 18, 44, 0.6);
+        backdrop-filter: blur(6px);
+        border-radius: 1.5rem;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s;
+    }
+    .step:hover {
+        border-color: var(--secondary);
+        transform: translateY(-4px);
+    }
+
+    /* WhatsApp floating button */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: #25D366;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        z-index: 99;
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1.2);
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1) rotate(10deg);
+        background: #128C7E;
+        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    footer {
+        background: #02040a;
+        padding: 4rem 0 2rem 0;
+        border-top: 1px solid rgba(0, 230, 90, 0.15);
+    }
+
+    [data-reveal] {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    [data-reveal].revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
     </style>
 </head>
 <body>
 
+<!-- Floating Blobs in background -->
+<div class="blob-container">
+    <div class="blob blob-green"></div>
+    <div class="blob blob-yellow"></div>
+    <div class="blob blob-blue"></div>
+</div>
+
 <nav>
     <div class="nav-container">
-        <div class="logo">Aion <span>Labs</span></div>
+        <a href="#home" class="logo-capsule" style="background: #FFFFFF; padding: 6px 16px; border-radius: 10px; display: inline-flex; align-items: center; box-shadow: 0 4px 20px rgba(0, 230, 90, 0.15); border: 1px solid rgba(0, 230, 90, 0.25);">
+            <img src="./logo-aionlabs.png" alt="AionLabs Logo" style="height: 34px; width: auto; object-fit: contain;">
+        </a>
         <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
         <div class="nav-links" id="navLinks">
             <a href="#home">Início</a>
             <a href="#servicos">Serviços</a>
             <a href="#segmentos">Segmentos</a>
-            <a href="#portfolio">Portfólio</a>
+            <a href="#canvas-estudio">Estúdio</a>
             <a href="#contato">Contato</a>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero Section with RedBull-style slideshow backgrounds -->
 <section id="home" class="hero">
-    <div class="hero-glow"></div>
+    <div class="hero-slideshow">
+        <div class="hero-slide active" style="background-image: url('./slide1.png');"></div>
+        <div class="hero-slide" style="background-image: url('./slide2.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('./slide3.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('./slide4.jpg');"></div>
+        <div class="hero-overlay"></div>
+    </div>
+    
     <div class="container hero-content">
         <div data-reveal>
-            <span class="gradient-text" style="font-weight: 500; letter-spacing: 2px;">INOVAÇÃO & TECNOLOGIA</span>
-            <h1 style="font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin: 1.5rem 0 1rem;">Transformamos Negócios em <span class="gradient-text">Presença Digital</span> de Alto Impacto</h1>
-            <p style="font-size: 1.2rem; color: #94A3B8; max-width: 650px; margin-bottom: 2rem;">Criamos sites modernos, rápidos e profissionais para empresas que desejam atrair mais clientes, fortalecer sua marca e aumentar suas vendas.</p>
+            <span class="gradient-text" style="font-weight: 600; letter-spacing: 2px; font-size: 0.9rem;">INOVAÇÃO & TECNOLOGIA</span>
+            <h1 style="font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin: 1.5rem 0 1rem; font-family: 'Playfair Display', serif;">Desenvolvemos Sites que <span class="gradient-text">Vendem por Você</span> 24h por Dia</h1>
+            <p style="font-size: 1.2rem; color: #E2E8F0; max-width: 650px; margin-bottom: 2.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.55);">Sites ultra-premium, rápidos e integrados para pequenas e médias empresas atraírem clientes, liderarem o mercado local e multiplicarem seu faturamento.</p>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="https://wa.me/5511951186928" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
-                <a href="#servicos" class="btn-outline-light"><i class="fas fa-arrow-right"></i> Solicitar orçamento</a>
+                <a href="https://wa.me/5511951186928" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Falar com Especialista</a>
+                <a href="#canvas-estudio" class="btn-outline-light"><i class="fas fa-magic"></i> Experimentar Estúdio</a>
             </div>
         </div>
-        <div class="floating-card" style="margin-top: 3rem; display: flex; justify-content: center;">
-            <div class="glass-card" style="padding: 0.8rem 1.5rem; display: inline-flex; gap: 2rem;">
-                <span><i class="fas fa-code"></i> Moderno</span>
-                <span><i class="fas fa-bolt"></i> Rápido</span>
-                <span><i class="fas fa-shield-alt"></i> Seguro</span>
+        <div class="floating-card" style="margin-top: 4rem; display: flex; justify-content: center;">
+            <div class="glass-card" style="padding: 0.9rem 1.8rem; display: inline-flex; gap: 2rem; border-color: rgba(255,255,255,0.08); background: rgba(10, 18, 44, 0.85);">
+                <span style="font-weight: 500; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fas fa-code" style="color: var(--primary);"></i> Moderno</span>
+                <span style="font-weight: 500; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fas fa-bolt" style="color: var(--secondary);"></i> Ultra Rápido</span>
+                <span style="font-weight: 500; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fas fa-shield-alt" style="color: var(--accent);"></i> Seguro</span>
             </div>
         </div>
+    </div>
+
+    <!-- Navigation dots for slideshow -->
+    <div class="slide-dots">
+        <div class="slide-dot active"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
     </div>
 </section>
 
 <!-- Especialistas -->
-<section style="background: #111827;">
+<section style="background: rgba(10, 18, 44, 0.45); border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03);">
     <div class="container">
-        <div data-reveal><h2 class="section-title">Especialistas em <span class="gradient-text">Sites Profissionais</span></h2></div>
-        <div data-reveal><p class="section-sub">Desenvolvemos sites personalizados para empresas que desejam crescer no ambiente digital. Projetos modernos, rápidos, seguros e preparados para gerar resultados reais.</p></div>
+        <div data-reveal><h2 class="section-title">Especialistas em <span class="gradient-text">Sites de Alta Conversão</span></h2></div>
+        <div data-reveal><p class="section-sub">Desenvolvemos soluções web personalizadas com foco em atração, retenção e conversão de clientes. Seu negócio posicionado como líder de mercado.</p></div>
         <div class="grid-3" data-reveal>
-            <div class="diff-card"><i class="fas fa-palette"></i><h3>Design exclusivo</h3><p>Cada projeto com identidade única e refinada.</p></div>
-            <div class="diff-card"><i class="fas fa-tachometer-alt"></i><h3>Alta performance</h3><p>Velocidade e otimização para melhor experiência.</p></div>
-            <div class="diff-card"><i class="fas fa-chart-line"></i><h3>SEO otimizado</h3><p>Estrutura pensada para rankeamento no Google.</p></div>
-            <div class="diff-card"><i class="fab fa-whatsapp"></i><h3>Integração com WhatsApp</h3><p>Atendimento direto e conversão facilitada.</p></div>
-            <div class="diff-card"><i class="fas fa-server"></i><h3>Hospedagem simplificada</h3><p>Infraestrutura robusta e gerenciável.</p></div>
-            <div class="diff-card"><i class="fas fa-tasks"></i><h3>Painéis personalizados</h3><p>Gestão de conteúdo intuitiva.</p></div>
-            <div class="diff-card"><i class="fas fa-database"></i><h3>Banco de dados integrado</h3><p>Supabase ou soluções modernas.</p></div>
-            <div class="diff-card"><i class="fas fa-headset"></i><h3>Suporte contínuo</h3><p>Equipe sempre disponível.</p></div>
+            <div class="diff-card"><i class="fas fa-palette"></i><h3>Design Exclusivo</h3><p>Cada projeto com identidade visual premium, refinada e focada no seu público.</p></div>
+            <div class="diff-card"><i class="fas fa-tachometer-alt"></i><h3>Velocidade Extrema</h3><p>Otimização de performance para carregar instantaneamente no celular.</p></div>
+            <div class="diff-card"><i class="fas fa-chart-line"></i><h3>Pronto para o Google (SEO)</h3><p>Estrutura semântica inteligente para sua empresa aparecer no topo das buscas.</p></div>
+            <div class="diff-card"><i class="fab fa-whatsapp"></i><h3>Atendimento Integrado</h3><p>Botões estratégicos do WhatsApp para facilitar o contato e fechar mais vendas.</p></div>
+            <div class="diff-card"><i class="fas fa-server"></i><h3>Hospedagem e Suporte</h3><p>Hospedagem de alto desempenho com atualizações e backups garantidos.</p></div>
+            <div class="diff-card"><i class="fas fa-tasks"></i><h3>Painéis Customizados</h3><p>Área administrativa intuitiva para você gerenciar o conteúdo sem complicações.</p></div>
+            <div class="diff-card"><i class="fas fa-database"></i><h3>Integração com Supabase</h3><p>Aplicações interativas seguras com bancos de dados relacionais na nuvem.</p></div>
+            <div class="diff-card"><i class="fas fa-headset"></i><h3>Suporte Contínuo</h3><p>Acompanhamento próximo pós-lançamento para garantir o sucesso do seu site.</p></div>
         </div>
     </div>
 </section>
 
 <!-- Segmentos -->
-<section id="segmentos">
+<section id="segmentos" style="background: transparent;">
     <div class="container">
-        <h2 class="section-title" data-reveal>Soluções para <span class="gradient-text">Diversos Segmentos</span></h2>
+        <h2 class="section-title" data-reveal>Resultados para <span class="gradient-text">Qualquer Segmento</span></h2>
+        <p class="section-sub" data-reveal>Sites e landing pages focados no seu nicho de atuação, estruturados para o seu público local e pensados para gerar autoridade.</p>
         <div class="grid-3" id="segmentGrid" data-reveal>
             <!-- cards serão populados via JS para manutenção -->
         </div>
@@ -414,105 +652,241 @@
 </section>
 
 <!-- Qual solução sua empresa precisa? -->
-<section style="background: #0B0F19;" id="servicos">
+<section style="background: rgba(10, 18, 44, 0.45); border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03);" id="servicos">
     <div class="container">
-        <h2 class="section-title" data-reveal>Qual solução sua empresa <span class="gradient-text">precisa?</span></h2>
+        <h2 class="section-title" data-reveal>Qual solução sua empresa <span class="gradient-text">precisa hoje?</span></h2>
+        <p class="section-sub" data-reveal>Desde landing pages pontuais até sistemas complexos com bancos de dados. Nós entregamos o que o seu negócio precisa.</p>
         <div class="grid-solucoes" data-reveal id="solutionsGrid"></div>
     </div>
 </section>
 
 <!-- Por que investir -->
-<section>
+<section style="background: transparent;">
     <div class="container">
-        <h2 class="section-title" data-reveal>Por que investir em um <span class="gradient-text">site profissional?</span></h2>
+        <h2 class="section-title" data-reveal>Por que ter um <span class="gradient-text">site com a Aion Labs?</span></h2>
+        <p class="section-sub" data-reveal>O seu site é a vitrine da sua empresa na internet. Não se contente com designs genéricos que afastam leads qualificados.</p>
         <div class="grid-3" data-reveal id="whyGrid"></div>
     </div>
 </section>
 
-<!-- Portfólio com filtros -->
-<section id="portfolio" style="background:#111827">
+<!-- Estúdio de Concepção Interativo (AionLabs Canvas) -->
+<section id="canvas-estudio" style="background: rgba(10, 18, 44, 0.45); border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03);">
     <div class="container">
-        <h2 class="section-title" data-reveal>Projetos que <span class="gradient-text">Geram Resultados</span></h2>
-        <div class="filter-buttons" id="filterButtons"></div>
-        <div class="portfolio-grid" id="portfolioGrid"></div>
+        <h2 class="section-title" data-reveal>Estúdio de Concepção <span class="gradient-text">Interativo</span></h2>
+        <p class="section-sub" data-reveal>Configure visualmente a proposta de estilo e foco comercial para o site do seu negócio e veja o conceito se materializar na hora.</p>
+        
+        <div class="glass-card" style="padding: 2.5rem; max-width: 1000px; margin: 0 auto; border-color: rgba(0, 230, 90, 0.2);" data-reveal>
+            <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem; align-items: start;">
+                <!-- Opções de Escolha -->
+                <div>
+                    <h3 style="margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; color: var(--secondary); font-size: 1.2rem;">
+                        <i class="fas fa-palette"></i> 1. Estilo Visual do Site
+                    </h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2rem;">
+                        <label class="simulator-option">
+                            <input type="radio" name="visual_style" value="tech_neon" checked onchange="updateCanvasStyle()">
+                            <div class="option-content">
+                                <div style="font-weight: 600; font-size: 0.95rem;">Tech Neon (Verde/Azul/Preto)</div>
+                                <p style="font-size: 0.8rem; color: #94A3B8; margin-top: 0.25rem;">Estilo futurista e de alta tecnologia. Ótimo para startups, oficinas e software.</p>
+                            </div>
+                        </label>
+                        <label class="simulator-option">
+                            <input type="radio" name="visual_style" value="gold_premium" onchange="updateCanvasStyle()">
+                            <div class="option-content">
+                                <div style="font-weight: 600; font-size: 0.95rem;">Gold Premium (Preto/Dourado)</div>
+                                <p style="font-size: 0.8rem; color: #94A3B8; margin-top: 0.25rem;">Visual luxuoso e requintado. Perfeito para clínicas estéticas e escritórios de advocacia.</p>
+                            </div>
+                        </label>
+                        <label class="simulator-option">
+                            <input type="radio" name="visual_style" value="minimalist_clean" onchange="updateCanvasStyle()">
+                            <div class="option-content">
+                                <div style="font-weight: 600; font-size: 0.95rem;">Minimalist Clean (Azul Marinho/Branco)</div>
+                                <p style="font-size: 0.8rem; color: #94A3B8; margin-top: 0.25rem;">Design corporativo limpo e focado na facilidade de leitura.</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <h3 style="margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; color: var(--secondary); font-size: 1.2rem;">
+                        <i class="fas fa-bullseye"></i> 2. Foco Comercial Principal
+                    </h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2rem;">
+                        <label class="simulator-option">
+                            <input type="radio" name="commercial_focus" value="leads" checked onchange="updateCanvasStyle()">
+                            <div class="option-content">
+                                <div style="font-weight: 600; font-size: 0.95rem;">Captar Contatos e Leads (WhatsApp)</div>
+                                <p style="font-size: 0.8rem; color: #94A3B8; margin-top: 0.25rem;">Otimizado com formulários e CTAs para agendamentos rápidos.</p>
+                            </div>
+                        </label>
+                        <label class="simulator-option">
+                            <input type="radio" name="commercial_focus" value="catalog" onchange="updateCanvasStyle()">
+                            <div class="option-content">
+                                <div style="font-weight: 600; font-size: 0.95rem;">Vitrine / Exposição de Produtos</div>
+                                <p style="font-size: 0.8rem; color: #94A3B8; margin-top: 0.25rem;">Ideal para comércios que querem expor produtos e fechar pedidos no chat.</p>
+                            </div>
+                        </label>
+                        <label class="simulator-option">
+                            <input type="radio" name="commercial_focus" value="authority" onchange="updateCanvasStyle()">
+                            <div class="option-content">
+                                <div style="font-weight: 600; font-size: 0.95rem;">Autoridade e Consolidação de Marca</div>
+                                <p style="font-size: 0.8rem; color: #94A3B8; margin-top: 0.25rem;">Foco em artigos, cases de sucesso e credibilidade institucional.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Preview Interativo e Indicadores -->
+                <div style="background: rgba(5, 8, 22, 0.75); padding: 2rem; border-radius: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.05); width: 100%;">
+                    <h4 style="color: #94A3B8; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 1rem; text-align: center;">Conceito em Tempo Real</h4>
+                    
+                    <!-- Simulação do Browser -->
+                    <div id="canvas-preview-card" class="glass-card" style="padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem; border: 1px solid rgba(0,230,90,0.3); transition: all 0.5s ease; background: rgba(10, 18, 44, 0.95);">
+                        <!-- Barra superior do browser -->
+                        <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
+                            <span style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                            <span style="width: 8px; height: 8px; border-radius: 50%; background: #fbbf24; display: inline-block;"></span>
+                            <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                        </div>
+                        <!-- Conteúdo simulado -->
+                        <div style="text-align: left;">
+                            <div id="canvas-preview-logo" style="font-weight: 800; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--primary); transition: 0.3s;">AionLabs Concept</div>
+                            <h4 id="canvas-preview-headline" style="font-size: 1.1rem; font-family: 'Playfair Display', serif; margin-bottom: 0.75rem; line-height: 1.3; transition: 0.3s; color: #fff;">Sua Empresa online com Design de Alta Performance</h4>
+                            <p id="canvas-preview-desc" style="font-size: 0.75rem; color: #94A3B8; margin-bottom: 1.25rem; transition: 0.3s;">Sites rápidos e customizados para o seu negócio crescer digitalmente.</p>
+                            
+                            <!-- Botão Simulado -->
+                            <div style="text-align: center;">
+                                <div id="canvas-preview-btn" style="display: inline-block; padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 600; background: var(--grad-brasil); color: #000; transition: all 0.3s;">
+                                    <i class="fab fa-whatsapp"></i> Falar com Especialista
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indicadores de Performance -->
+                    <div style="margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                        <h5 style="color: var(--secondary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Métricas Esperadas do Projeto:</h5>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+                            <span>Velocidade de Carregamento (Mobile)</span>
+                            <span style="font-weight: 700; color: #10b981;">99 / 100 <i class="fas fa-bolt"></i></span>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); height: 6px; border-radius: 3px; overflow: hidden;">
+                            <div style="background: #10b981; width: 99%; height: 100%;"></div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+                            <span>Melhoria de Conversão Média</span>
+                            <span style="font-weight: 700; color: var(--primary);">+150% <i class="fas fa-chart-line"></i></span>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); height: 6px; border-radius: 3px; overflow: hidden;">
+                            <div style="background: var(--primary); width: 85%; height: 100%;"></div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+                            <span>Otimização para o Google (SEO Score)</span>
+                            <span style="font-weight: 700; color: var(--accent);">Grau A+ <i class="fas fa-search"></i></span>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); height: 6px; border-radius: 3px; overflow: hidden;">
+                            <div style="background: var(--accent); width: 95%; height: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Envio -->
+                    <div>
+                        <button onclick="sendCanvasWhatsApp()" class="btn-primary" style="width: 100%; justify-content: center; padding: 1.1rem; font-size: 1.05rem;">
+                            <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> Solicitar Protótipo Sob Medida
+                        </button>
+                        <p style="font-size: 0.75rem; color: #94A3B8; text-align: center; margin-top: 0.8rem;">*Orçamentos são feitos sob medida após estudo de requisitos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Depoimentos -->
-<section>
+<section style="background: transparent;">
     <div class="container">
-        <h2 class="section-title" data-reveal>O que nossos <span class="gradient-text">clientes dizem</span></h2>
+        <h2 class="section-title" data-reveal>O que dizem os <span class="gradient-text">Nossos Parceiros</span></h2>
+        <p class="section-sub" data-reveal>Depoimentos reais de empresas que tiveram suas operações potencializadas pela presença digital criada pela Aion Labs.</p>
         <div class="grid-3" id="testimonialsGrid" data-reveal></div>
     </div>
 </section>
 
 <!-- Como funciona timeline -->
-<section style="background: radial-gradient(ellipse at 30% 40%, #111827, #070b12);">
+<section style="background: radial-gradient(ellipse at 30% 40%, rgba(10, 18, 44, 0.4), rgba(4, 8, 21, 0.8)); border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03);">
     <div class="container">
         <h2 class="section-title" data-reveal>Como <span class="gradient-text">Funciona</span></h2>
+        <p class="section-sub" data-reveal>Nossa metodologia para transformar sua idea de site em um canal robusto de atração de clientes em poucos dias.</p>
         <div class="timeline" data-reveal id="timelineSteps"></div>
     </div>
 </section>
 
 <!-- Call to action final -->
-<section>
+<section style="background: transparent;">
     <div class="container">
-        <div class="glass-card" style="padding: 3rem; text-align: center;" data-reveal>
-            <h2 style="font-size: 2rem;">Pronto para colocar sua empresa em destaque na internet?</h2>
-            <p style="color:#94A3B8; margin: 1rem 0 2rem;">Solicite um orçamento sem compromisso e descubra como podemos criar um site moderno e profissional para o seu negócio.</p>
-            <a href="https://wa.me/5511951186928" target="_blank" class="btn-primary" style="font-size: 1.1rem;"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
+        <div class="glass-card" style="padding: 4rem 3rem; text-align: center; border-color: rgba(0, 230, 90, 0.25);" data-reveal>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Pronto para dominar o mercado local na internet?</h2>
+            <p style="color:#94A3B8; margin: 0 auto 2.5rem auto; max-width: 600px;">Solicite um diagnóstico gratuito sem compromisso e descubra como podemos ajudar o seu negócio a crescer.</p>
+            <a href="https://wa.me/5511951186928" target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;"><i class="fab fa-whatsapp"></i> Falar com Especialista</a>
         </div>
     </div>
 </section>
 
 <footer id="contato">
     <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
-        <div><h3>Aion Labs</h3><p style="color:#94A3B8;">Desenvolvimento de Sites Profissionais<br>Atendimento para todo o Brasil<br>📍 São Paulo - SP, Bairro Sé</p></div>
-        <div><h4>Contato</h4><p><i class="fab fa-whatsapp"></i> (11) 95118-6928</p><p><i class="far fa-envelope"></i> contato@aionlabs.com.br</p></div>
-        <div><h4>Links rápidos</h4><p><a href="#home" style="color:#8B5CF6;">Início</a> | <a href="#servicos" style="color:#8B5CF6;">Serviços</a> | <a href="#segmentos" style="color:#8B5CF6;">Segmentos</a></p></div>
+        <div>
+            <div class="logo-capsule" style="display: inline-flex; margin-bottom: 1rem;">
+                <img src="./logo-aionlabs.png" alt="AionLabs Logo" style="height: 32px;">
+            </div>
+            <p style="color:#94A3B8; font-size: 0.9rem; line-height: 1.6;">Desenvolvimento de Sites Profissionais de Alta Performance.<br>Atendimento para todo o Brasil.<br>📍 São Paulo - SP, Bairro Sé</p>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 1rem; font-weight: 600; color: var(--secondary);">Contato</h4>
+            <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><i class="fab fa-whatsapp" style="color: var(--primary);"></i> (11) 95118-6928</p>
+            <p style="font-size: 0.95rem;"><i class="far fa-envelope" style="color: var(--accent);"></i> contato@aionlabs.com.br</p>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 1rem; font-weight: 600; color: var(--secondary);">Links Rápidos</h4>
+            <p style="font-size: 0.95rem;"><a href="#home" style="color: #fff; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Início</a> | <a href="#servicos" style="color: #fff; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Serviços</a> | <a href="#simulador" style="color: #fff; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Orçamento</a></p>
+        </div>
     </div>
-    <div class="container" style="text-align: center; margin-top: 2rem; border-top: 1px solid #1e293b; padding-top: 1.5rem;"><span style="color:#64748b;">© 2025 Aion Labs — Tecnologia e Inovação</span></div>
+    <div class="container" style="text-align: center; margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;"><span style="color:#64748b; font-size: 0.85rem;">© 2026 Aion Labs — Tecnologia e Inovação</span></div>
 </footer>
+
 <a href="https://wa.me/5511951186928" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
 <script>
     // Data population
     const segments = [
-        {nome:"Estéticas", desc:"Soluções para clínicas de estética e bem-estar", icon:"fas fa-spa"},
-        {nome:"Oficinas Mecânicas", desc:"Gestão de serviços e agendamentos", icon:"fas fa-wrench"},
-        {nome:"Auto Elétricas", desc:"Diagnóstico e catálogo de serviços", icon:"fas fa-car-battery"},
-        {nome:"Escritórios de Advocacia", desc:"Presença digital confiável e cases", icon:"fas fa-gavel"},
-        {nome:"Clínicas Odontológicas", desc:"Agendamentos e credibilidade", icon:"fas fa-tooth"},
-        {nome:"Personal Trainers", desc:"Landing page e captação de alunos", icon:"fas fa-dumbbell"},
-        {nome:"Imobiliárias", desc:"Vitrine imobiliária com filtros", icon:"fas fa-building"},
-        {nome:"Restaurantes", desc:"Cardápio digital e reservas", icon:"fas fa-utensils"},
-        {nome:"Distribuidoras", desc:"Catálogo B2B e sistema", icon:"fas fa-truck"},
-        {nome:"Pequenos Comércios", desc:"E-commerce e vitrine", icon:"fas fa-store"}
+        {nome:"Clínicas de Estética", desc:"Aumente agendamentos e destaque procedimentos e diferenciais.", icon:"fas fa-spa"},
+        {nome:"Oficinas Mecânicas", desc:"Atraia mais clientes com serviços claros e agendamentos simples.", icon:"fas fa-wrench"},
+        {nome:"Auto Elétricas", desc:"Catálogo de serviços especializados e contato rápido.", icon:"fas fa-car-battery"},
+        {nome:"Escritórios de Advocacia", desc:"Posicione-se com máxima autoridade e credibilidade.", icon:"fas fa-gavel"},
+        {nome:"Consultórios Médicos", desc:"Conquiste novos pacientes e facilite consultas via site.", icon:"fas fa-tooth"},
+        {nome:"Personal Trainers", desc:"Página de alta conversão para fechar novos alunos de consultoria.", icon:"fas fa-dumbbell"},
+        {nome:"Imobiliárias", desc:"Vitrine imobiliária moderna e responsiva com filtros de busca.", icon:"fas fa-building"},
+        {nome:"Restaurantes e Bares", desc:"Cardápio digital de carregamento rápido e reservas práticas.", icon:"fas fa-utensils"},
+        {nome:"Distribuidoras", desc:"Catálogos de produtos integrados para captação B2B.", icon:"fas fa-truck"},
+        {nome:"Pequenos Comércios", desc:"Vitrine digital elegante para vendas locais qualificadas.", icon:"fas fa-store"}
     ];
     const solutions = [
         {nome:"Site Institucional", desc:"Apresente sua empresa de forma profissional.", icon:"fas fa-building"},
-        {nome:"Landing Page", desc:"Captação de leads e campanhas.", icon:"fas fa-chart-simple"},
-        {nome:"Catálogo Online", desc:"Exiba produtos e serviços.", icon:"fas fa-images"},
-        {nome:"Sistema Administrativo", desc:"Gestão de clientes e informações.", icon:"fas fa-users-gear"},
-        {nome:"Site com Banco de Dados", desc:"Integração com Supabase.", icon:"fas fa-database"},
-        {nome:"Site Personalizado", desc:"Projeto totalmente exclusivo.", icon:"fas fa-pen-ruler"}
+        {nome:"Landing Page", desc:"Captação de leads e campanhas de conversão.", icon:"fas fa-chart-simple"},
+        {nome:"Catálogo Online", desc:"Exiba seus produtos e receba pedidos no WhatsApp.", icon:"fas fa-images"},
+        {nome:"Sistema Administrativo", desc:"Gestão completa de clientes e informações.", icon:"fas fa-users-gear"},
+        {nome:"Site com Banco de Dados", desc:"Sistemas interativos integrados ao Supabase.", icon:"fas fa-database"},
+        {nome:"Site Customizado", desc:"Desenvolvimento de escopos sob medida.", icon:"fas fa-pen-ruler"}
     ];
     const whyList = [
-        "Mais credibilidade", "Mais clientes", "Atendimento automatizado", "Presença online 24 horas",
-        "Divulgação profissional", "Fortalecimento da marca", "Crescimento das vendas", "Melhor posicionamento no Google"
-    ];
-    const portfolioItems = [
-        {segmento:"Estéticas", titulo:"Beauty Med", cor:"#8B5CF6"}, {segmento:"Oficinas Mecânicas", titulo:"AutoCenter Pro"}, 
-        {segmento:"Escritórios de Advocacia", titulo:"Castro & Associados"}, {segmento:"Restaurantes", titulo:"Sabor Gourmet"},
-        {segmento:"Imobiliárias", titulo:"Lar Imóveis"}, {segmento:"Clínicas Odontológicas", titulo:"DentalVip"},
-        {segmento:"Personal Trainers", titulo:"FitMax"}, {segmento:"Distribuidoras", titulo:"LogSupply"}
+        "Mais credibilidade no mercado local", "Posicionamento estratégico no Google", "Captação de novos clientes 24 horas por dia", "Atendimento inicial automatizado no WhatsApp",
+        "Fortalecimento e consolidação de marca", "Design premium e exclusivo (sem cópias)", "Velocidade incrível e segura no celular", "Código otimizado para campanhas de anúncios"
     ];
     const testimonials = [
-        {nome:"Mariana Costa", texto:"A Aion Labs entregou um site incrível, nossa receita aumentou 40% em 3 meses.", estrelas:5, cargo:"CEO Estética Flor"},
-        {nome:"Rafael Oliveira", texto:"Profissionalismo e tecnologia de ponta. Interface moderna e suporte rápido.", estrelas:5, cargo:"Oficina Rodrigues"},
-        {nome:"Dra. Camila Sato", texto:"Meu consultório ganhou autoridade e pacientes via site. Recomendo!", estrelas:5, cargo:"Odontologia"}
+        {nome:"Mariana Costa", texto:"A Aion Labs entregou uma landing page incrível. Nossos agendamentos de estética aumentaram em 45% em menos de dois meses.", estrelas:5, cargo:"CEO Estética Flor"},
+        {nome:"Rafael Oliveira", texto:"O painel e a velocidade do site são excelentes. Meus clientes de mecânica agora nos acham direto no Google e agendam tudo pelo WhatsApp.", estrelas:5, cargo:"Diretor Oficina Rodrigues"},
+        {nome:"Dra. Camila Sato", texto:"Profissionalismo impecável. Meu consultório odontológico ganhou muita autoridade e o suporte da equipe é excelente.", estrelas:5, cargo:"Fundadora Sato Odontologia"}
     ];
-    const steps = ["Conversa Inicial", "Planejamento", "Desenvolvimento", "Aprovação", "Publicação", "Suporte"];
+    const steps = ["Alinhamento de Escopo", "Design & UX", "Desenvolvimento", "Validação Técnica", "Publicação oficial", "Suporte Contínuo"];
 
     function renderSegmentos() {
         const container = document.getElementById('segmentGrid');
@@ -520,7 +894,7 @@
             <div class="segment-card glass-card">
                 <i class="${seg.icon}"></i>
                 <h3>${seg.nome}</h3>
-                <p style="color:#94A3B8;">${seg.desc}</p>
+                <p style="color:#94A3B8; font-size: 0.9rem; margin-top: 0.5rem;">${seg.desc}</p>
             </div>
         `).join('');
     }
@@ -529,66 +903,177 @@
             <div class="solution-card">
                 <i class="${s.icon}"></i>
                 <h3>${s.nome}</h3>
-                <p>${s.desc}</p>
+                <p style="color:#94A3B8; font-size: 0.9rem; margin-top: 0.5rem;">${s.desc}</p>
             </div>
         `).join('');
     }
     function renderWhy() {
         document.getElementById('whyGrid').innerHTML = whyList.map(item => `
-            <div class="why-card" style="display: flex; gap: 1rem; align-items: center;"><i class="fas fa-check-circle" style="color:#8B5CF6; font-size: 1.8rem;"></i><span style="font-weight:500;">${item}</span></div>
-        `).join('');
-    }
-    let activeFilter = "Todos";
-    function renderPortfolio(filter = "Todos") {
-        const filtered = filter === "Todos" ? portfolioItems : portfolioItems.filter(p => p.segmento === filter);
-        const grid = document.getElementById('portfolioGrid');
-        grid.innerHTML = filtered.map(item => `
-            <div class="portfolio-item">
-                <div class="mockup-img"><i class="fas fa-laptop-code"></i> <span style="margin-left:8px;">${item.titulo}</span></div>
-                <div style="padding: 1rem;"><p style="color:#cbd5e6;"><i class="fas fa-tag"></i> ${item.segmento}</p><h4>${item.titulo}</h4></div>
+            <div class="why-card" style="display: flex; gap: 1rem; align-items: center;">
+                <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.8rem;"></i>
+                <span style="font-weight:500; font-size: 0.95rem;">${item}</span>
             </div>
         `).join('');
-    }
-    function renderFilters() {
-        const segmentsFilter = [...new Set(portfolioItems.map(p => p.segmento))];
-        const btns = ['Todos', ...segmentsFilter];
-        const container = document.getElementById('filterButtons');
-        container.innerHTML = btns.map(btn => `<button class="filter-btn ${activeFilter === btn ? 'active' : ''}" data-filter="${btn}">${btn}</button>`).join('');
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                activeFilter = btn.getAttribute('data-filter');
-                renderFilters();
-                renderPortfolio(activeFilter);
-            });
-        });
     }
     function renderTestimonials() {
         document.getElementById('testimonialsGrid').innerHTML = testimonials.map(t => `
             <div class="testimonial-card glass-card">
-                <div style="display:flex; gap:4px; margin-bottom: 1rem;">${Array(t.estrelas).fill('<i class="fas fa-star" style="color:#FBBF24;"></i>').join('')}</div>
-                <p>"${t.texto}"</p>
-                <h4 style="margin-top:1rem;">${t.nome}</h4>
-                <small style="color:#8B5CF6;">${t.cargo}</small>
+                <div style="display:flex; gap:4px; margin-bottom: 1.25rem;">${Array(t.estrelas).fill('<i class="fas fa-star" style="color:#FBBF24;"></i>').join('')}</div>
+                <p style="font-style: italic; color: #e2e8f0; line-height: 1.6;">"${t.texto}"</p>
+                <h4 style="margin-top:1.5rem; font-weight: 600; color: #fff;">${t.nome}</h4>
+                <small style="color: var(--primary); font-weight: 500;">${t.cargo}</small>
             </div>
         `).join('');
     }
     function renderTimeline() {
         document.getElementById('timelineSteps').innerHTML = steps.map((step, idx) => `
             <div class="step glass-card">
-                <div style="font-size:2rem; font-weight:bold; color:#8B5CF6;">0${idx+1}</div>
-                <h3>${step}</h3>
+                <div style="font-size:2.2rem; font-weight:bold; color: var(--secondary); margin-bottom: 0.5rem;">0${idx+1}</div>
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff;">${step}</h3>
             </div>
         `).join('');
     }
     
+    // Slideshow control (RedBull style)
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slide-dot');
+    let slideInterval;
+    
+    function showSlide(index) {
+        if (slides.length === 0) return;
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        currentSlide = index;
+        if(currentSlide >= slides.length) currentSlide = 0;
+        if(currentSlide < 0) currentSlide = slides.length - 1;
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+    
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    function startSlideshow() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 6000);
+    }
+    
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+            showSlide(idx);
+            startSlideshow();
+        });
+    });
+
+    // Interactive Concepção Studio (AionLabs Canvas)
+    function updateCanvasStyle() {
+        const styleRadios = document.getElementsByName('visual_style');
+        let selectedStyle = 'tech_neon';
+        for(let r of styleRadios) {
+            if(r.checked) { selectedStyle = r.value; break; }
+        }
+        
+        const focusRadios = document.getElementsByName('commercial_focus');
+        let selectedFocus = 'leads';
+        for(let r of focusRadios) {
+            if(r.checked) { selectedFocus = r.value; break; }
+        }
+        
+        const card = document.getElementById('canvas-preview-card');
+        const logo = document.getElementById('canvas-preview-logo');
+        const headline = document.getElementById('canvas-preview-headline');
+        const desc = document.getElementById('canvas-preview-desc');
+        const btn = document.getElementById('canvas-preview-btn');
+        
+        if(!card) return;
+        
+        // Update Style colors
+        if(selectedStyle === 'tech_neon') {
+            card.style.borderColor = 'rgba(0, 230, 90, 0.45)';
+            card.style.boxShadow = '0 10px 30px rgba(0, 230, 90, 0.08)';
+            logo.style.color = 'var(--primary)';
+            btn.style.background = 'var(--grad-brasil)';
+            btn.style.color = '#000';
+        } else if(selectedStyle === 'gold_premium') {
+            card.style.borderColor = 'rgba(255, 210, 0, 0.45)';
+            card.style.boxShadow = '0 10px 30px rgba(255, 210, 0, 0.08)';
+            logo.style.color = 'var(--secondary)';
+            btn.style.background = 'var(--secondary)';
+            btn.style.color = '#000';
+        } else if(selectedStyle === 'minimalist_clean') {
+            card.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+            card.style.boxShadow = 'none';
+            logo.style.color = '#FFFFFF';
+            btn.style.background = 'var(--accent)';
+            btn.style.color = '#fff';
+        }
+        
+        // Update Focus text
+        if(selectedFocus === 'leads') {
+            headline.innerText = 'Gere Mais Agendamentos pelo WhatsApp';
+            desc.innerText = 'Um site estruturado para converter visitantes em contatos qualificados e vendas diretas.';
+            btn.innerHTML = '<i class="fab fa-whatsapp"></i> Agendar Diagnóstico Grátis';
+        } else if(selectedFocus === 'catalog') {
+            headline.innerText = 'Seus Produtos Expostos com Alta Performance';
+            desc.innerText = 'Vitrine online rápida para expor seu portfólio de produtos e gerar pedidos diretos no WhatsApp.';
+            btn.innerHTML = '<i class="fab fa-whatsapp"></i> Ver Catálogo Demonstrativo';
+        } else if(selectedFocus === 'authority') {
+            headline.innerText = 'Posicione sua Marca com Prestígio Digital';
+            desc.innerText = 'Design sofisticado e ultra-premium para construir autoridade, exibir artigos e cases de sucesso.';
+            btn.innerHTML = '<i class="fab fa-whatsapp"></i> Falar com Especialista';
+        }
+    }
+    
+    function sendCanvasWhatsApp() {
+        const styleRadios = document.getElementsByName('visual_style');
+        let selectedStyle = 'tech_neon';
+        for(let r of styleRadios) {
+            if(r.checked) { selectedStyle = r.value; break; }
+        }
+        
+        const focusRadios = document.getElementsByName('commercial_focus');
+        let selectedFocus = 'leads';
+        for(let r of focusRadios) {
+            if(r.checked) { selectedFocus = r.value; break; }
+        }
+        
+        const styleNames = {
+            tech_neon: 'Tech Neon (Verde/Azul/Preto)',
+            gold_premium: 'Gold Premium (Preto/Dourado)',
+            minimalist_clean: 'Minimalist Clean (Azul Marinho/Branco)'
+        };
+        
+        const focusNames = {
+            leads: 'Captar Contatos e Leads (WhatsApp)',
+            catalog: 'Vitrine / Exposição de Produtos',
+            authority: 'Autoridade e Consolidação de Marca'
+        };
+        
+        let message = `Olá Aion Labs! Configurei um conceito no Estúdio de Concepção Interativo:\n\n`;
+        message += `*Estilo Visual:* ${styleNames[selectedStyle]}\n`;
+        message += `*Foco Comercial:* ${focusNames[selectedFocus]}\n\n`;
+        message += `Gostaria de agendar uma reunião rápida com um especialista para detalhar as ideias e solicitar um orçamento sob medida! 🚀`;
+        
+        const url = `https://wa.me/5511951186928?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+    
+    // Set global access
+    window.updateCanvasStyle = updateCanvasStyle;
+    window.sendCanvasWhatsApp = sendCanvasWhatsApp;
+
     // Initialize all
     renderSegmentos();
     renderSolutions();
     renderWhy();
-    renderFilters();
-    renderPortfolio("Todos");
     renderTestimonials();
     renderTimeline();
+    updateCanvasStyle();
+    startSlideshow();
 
     // menu mobile
     const toggleBtn = document.getElementById('menuToggle');
@@ -607,7 +1092,7 @@
         });
     }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
     revealElements.forEach(el => revealObserver.observe(el));
-    // small trigger for first elements
+    // trigger scroll reveal
     window.dispatchEvent(new Event('scroll'));
 </script>
 </body>
