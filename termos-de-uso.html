@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Termos de Uso | Aion ERP</title>
+    <meta name="description" content="Termos e condições de uso do site institucional e da plataforma de gestão empresarial Aion ERP — by AionLabs.">
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --orange-main: #EB5E28;
+            --orange-dark: #B83E15;
+            --orange-light: #FF8C61;
+            --bg-dark: #0B0F14;
+            --bg-navy: #0D1728;
+            --white: #FFFFFF;
+            --gray-light: #F3F5F7;
+            --gray-text: #94A3B8;
+            --text-dark: #0F172A;
+            --text-body: #334155;
+            --border-light: #E2E8F0;
+            --border-dark: rgba(255, 255, 255, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--gray-light);
+            color: var(--text-dark);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        header {
+            background-color: var(--bg-dark);
+            border-bottom: 1px solid var(--border-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--bg-navy);
+            border: 1px solid rgba(235, 94, 40, 0.45);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .brand-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+        .brand-name {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            color: var(--white);
+        }
+        .brand-sub {
+            font-size: 0.7rem;
+            color: var(--gray-text);
+            font-weight: 500;
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.55rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-dark);
+            background: var(--bg-navy);
+            transition: all 0.2s ease;
+        }
+        .btn-back:hover {
+            border-color: var(--orange-main);
+            color: var(--orange-light);
+        }
+        main {
+            padding: 3.5rem 0 4.5rem;
+        }
+        .doc-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 20px rgba(11, 15, 20, 0.04);
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(235, 94, 40, 0.1);
+            color: var(--orange-dark);
+            font-weight: 600;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 99px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--bg-dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .doc-meta {
+            font-size: 0.88rem;
+            color: #64748B;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--bg-navy);
+            margin: 2rem 0 0.75rem;
+        }
+        p, li {
+            color: var(--text-body);
+            font-size: 0.96rem;
+            margin-bottom: 0.85rem;
+        }
+        ul {
+            padding-left: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: var(--bg-dark);
+            color: var(--gray-text);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-dark);
+        }
+        footer a {
+            color: var(--orange-light);
+            text-decoration: none;
+        }
+        @media (max-width: 640px) {
+            .doc-card { padding: 2rem 1.4rem; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-bar">
+            <a href="./index.html" class="brand" aria-label="Voltar ao início - Aion ERP">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#EB5E28" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="#FF8C61" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Aion ERP</span>
+                    <span class="brand-sub">by AionLabs</span>
+                </div>
+            </a>
+            <a href="./index.html" class="btn-back">
+                <i data-lucide="arrow-left" style="width:16px;height:16px;"></i> Voltar ao site
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="doc-card">
+            <span class="badge">Documento Institucional</span>
+            <h1>Termos de Uso</h1>
+            <p class="doc-meta">Aion ERP — by AionLabs • Vigente em <span id="currentYearMeta">2026</span></p>
+
+            <p>Estes Termos de Uso regulam o acesso ao site institucional e a utilização da plataforma de gestão empresarial <strong>Aion ERP</strong>, desenvolvida pela <strong>AionLabs</strong>.</p>
+
+            <h2>1. Objeto da Plataforma</h2>
+            <p>O Aion ERP é um sistema de gestão empresarial em modelo SaaS (Software como Serviço) projetado para auxiliar empresas na organização de cadastros de clientes, catálogo de produtos e serviços, controle de estoque, registro de vendas, acompanhamento de contas a receber, despesas, agendamentos e relatórios operacionais, conforme os módulos contratados e habilitados para cada operação.</p>
+
+            <h2>2. Credenciais e Acesso ao Sistema</h2>
+            <p>O acesso ao painel operacional do Aion ERP é destinado às empresas com contrato ativo. Cada empresa recebe sua configuração identificada por CNPJ e sufixo de login (ex.: <code>usuario.empresa</code>), sendo o administrador da empresa contratante responsável por gerenciar os perfis de permissão de sua equipe e zelar pelo sigilo das senhas de acesso.</p>
+
+            <h2>3. Responsabilidades do Usuário</h2>
+            <ul>
+                <li>Inserir dados verídicos e manter atualizadas as informações cadastrais da empresa;</li>
+                <li>Utilizar os módulos habilitados em conformidade com a legislação vigente;</li>
+                <li>Validar os cálculos, relatórios e controles internos gerados no uso cotidiano da operação;</li>
+                <li>Não compartilhar credenciais administrativas com terceiros não autorizados.</li>
+            </ul>
+
+            <h2>4. Disponibilidade, Suporte e Evolução</h2>
+            <p>O Aion ERP recebe atualizações e melhorias contínuas. O atendimento técnico e o auxílio nas configurações iniciais seguem as condições comerciais vigentes acordadas no momento da contratação (incluindo horário comercial padrão de segunda a sexta-feira ou plantão adicional quando contratado).</p>
+
+            <h2>5. Propriedade Intelectual</h2>
+            <p>O código-fonte, a arquitetura multicliente, a identidade visual, o logotipo e a marca <strong>Aion ERP — by AionLabs</strong> são de titularidade exclusiva da AionLabs, sendo concedida à empresa contratante a licença de uso não exclusiva enquanto perdurar a assinatura mensal.</p>
+
+            <h2>6. Contato Comercial e Suporte</h2>
+            <p>Para dúvidas sobre condições comerciais, implantação ou suporte técnico:</p>
+            <ul>
+                <li><strong>E-mail:</strong> contato@aionlabs.com.br</li>
+                <li><strong>WhatsApp Comercial:</strong> (11) 95118-6928</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear">2026</span> Aion ERP — by AionLabs. Todos os direitos reservados. | <a href="./index.html">Página Inicial</a> | <a href="./politica-de-privacidade.html">Política de Privacidade</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const year = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = year;
+        document.getElementById('currentYearMeta').textContent = year;
+        if (window.lucide) lucide.createIcons();
+    </script>
+</body>
+</html>

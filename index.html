@@ -3,612 +3,2875 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Aion Labs | Transformamos Negócios em Presença Digital de Alto Impacto</title>
-    <meta name="description" content="Criação de sites profissionais modernos e de alto desempenho para pequenos e médios negócios. Design exclusivo, SEO e soluções integradas.">
+    <title>Aion ERP | Sistema de Gestão para Diversos Segmentos</title>
+    <meta name="description" content="Conheça o Aion ERP, um sistema de gestão para organizar clientes, produtos, vendas, estoque e financeiro em uma única plataforma.">
+    <meta name="author" content="AionLabs">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0B0F14">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ailton019.github.io/empre/">
+
+    <!-- Open Graph / WhatsApp / LinkedIn / Instagram -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aion ERP — by AionLabs">
+    <meta property="og:title" content="Aion ERP | Sistema de Gestão para Diversos Segmentos">
+    <meta property="og:description" content="Conheça o Aion ERP, um sistema de gestão para organizar clientes, produtos, vendas, estoque e financeiro em uma única plataforma.">
+    <meta property="og:url" content="https://ailton019.github.io/empre/">
+    <meta property="og:image" content="https://ailton019.github.io/empre/assets/og-aion-erp.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aion ERP | Sistema de Gestão para Diversos Segmentos">
+    <meta name="twitter:description" content="Conheça o Aion ERP, um sistema de gestão para organizar clientes, produtos, vendas, estoque e financeiro em uma única plataforma.">
+    <meta name="twitter:image" content="https://ailton019.github.io/empre/assets/og-aion-erp.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/favicon.png">
+
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="./desenvolvedor.png" type="">
-    <!-- Fonts: Inter + Playfair Display para toque sofisticado -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
+        /* ==========================================================================
+           1. IDENTIDADE VISUAL OFICIAL AION ERP
+           Paleta Oficial:
+           - Laranja principal: #EB5E28
+           - Laranja escuro:    #B83E15
+           - Laranja claro:     #FF8C61
+           - Fundo escuro:      #0B0F14
+           - Azul-marinho:      #0D1728
+           - Branco:            #FFFFFF
+           - Cinza claro:       #F3F5F7
+           - Cinza de texto:    #94A3B8
+           ========================================================================== */
+        :root {
+            --orange-main: #EB5E28;
+            --orange-dark: #B83E15;
+            --orange-light: #FF8C61;
+            --bg-dark: #0B0F14;
+            --bg-navy: #0D1728;
+            --white: #FFFFFF;
+            --gray-light: #F3F5F7;
+            --gray-text: #94A3B8;
+
+            /* Auxiliares de leitura e bordas */
+            --text-dark-heading: #0B0F14;
+            --text-dark-body: #334155;
+            --border-on-dark: rgba(255, 255, 255, 0.08);
+            --border-on-light: #E2E8F0;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-light: 0 4px 20px rgba(11, 15, 20, 0.05);
+            --shadow-dark: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0B0F19;
-            color: #FFFFFF;
-            line-height: 1.5;
+        html {
             scroll-behavior: smooth;
+            scroll-padding-top: 84px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--white);
+            line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Glassmorphism e gradientes */
-        .glass-card {
-            background: rgba(17, 24, 39, 0.65);
-            backdrop-filter: blur(12px);
-            border-radius: 2rem;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .glass-card:hover {
-            border-color: rgba(139, 92, 246, 0.6);
-            box-shadow: 0 25px 40px -12px rgba(139, 92, 246, 0.25);
-            transform: translateY(-6px);
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            display: inline-block;
+        button, input, select, textarea {
+            font-family: inherit;
         }
 
-        .btn-primary {
-            background: linear-gradient(95deg, #8B5CF6, #06B6D4);
-            border: none;
-            padding: 0.9rem 2rem;
-            border-radius: 3rem;
-            font-weight: 600;
-            color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.4);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
-            background: linear-gradient(95deg, #7c3aed, #0891b2);
-        }
-
-        .btn-outline-light {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 0.9rem 2rem;
-            border-radius: 3rem;
-            font-weight: 500;
-            color: white;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-outline-light:hover {
-            background: rgba(139, 92, 246, 0.2);
-            border-color: #8B5CF6;
-        }
-
-        /* layout */
+        /* Layout Containers */
         .container {
-            max-width: 1280px;
+            max-width: 1240px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
         section {
-            padding: 5rem 0;
+            padding: 5.5rem 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background-color: var(--bg-dark);
+            color: var(--white);
+            border-bottom: 1px solid var(--border-on-dark);
+        }
+
+        .section-navy {
+            background-color: var(--bg-navy);
+            color: var(--white);
+            border-bottom: 1px solid var(--border-on-dark);
+        }
+
+        .section-light {
+            background-color: var(--gray-light);
+            color: var(--text-dark-heading);
+            border-bottom: 1px solid var(--border-on-light);
+        }
+
+        .section-white {
+            background-color: var(--white);
+            color: var(--text-dark-heading);
+            border-bottom: 1px solid var(--border-on-light);
+        }
+
+        /* Section Header Typography */
+        .section-header {
+            max-width: 740px;
+            margin: 0 auto 3.5rem;
+            text-align: center;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+            background: rgba(235, 94, 40, 0.12);
+            color: var(--orange-main);
+            border: 1px solid rgba(235, 94, 40, 0.25);
+        }
+
+        .section-dark .section-tag,
+        .section-navy .section-tag {
+            background: rgba(235, 94, 40, 0.15);
+            color: var(--orange-light);
+            border-color: rgba(235, 94, 40, 0.35);
         }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
             margin-bottom: 1rem;
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-        }
-        .section-sub {
-            text-align: center;
-            color: #94A3B8;
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
         }
 
-        /* navbar fixa */
-        nav {
+        .section-desc {
+            font-size: 1.06rem;
+            line-height: 1.65;
+        }
+
+        .section-dark .section-desc,
+        .section-navy .section-desc {
+            color: var(--gray-text);
+        }
+
+        .section-light .section-desc,
+        .section-white .section-desc {
+            color: var(--text-dark-body);
+        }
+
+        /* ==========================================================================
+           2. BOTÕES E INTERAÇÕES
+           ========================================================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .btn:focus-visible {
+            outline: 3px solid var(--orange-light);
+            outline-offset: 2px;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn-primary {
+            background-color: var(--orange-main);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(235, 94, 40, 0.28);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--orange-dark);
+            box-shadow: 0 6px 20px rgba(235, 94, 40, 0.38);
+        }
+
+        .btn-secondary-dark {
+            background-color: var(--bg-navy);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.16);
+        }
+
+        .btn-secondary-dark:hover {
+            border-color: var(--orange-light);
+            color: var(--orange-light);
+            background-color: rgba(13, 23, 40, 0.9);
+        }
+
+        .btn-secondary-light {
+            background-color: var(--white);
+            color: var(--bg-dark);
+            border-color: var(--border-on-light);
+        }
+
+        .btn-secondary-light:hover {
+            border-color: var(--orange-main);
+            color: var(--orange-dark);
+        }
+
+        .btn-lg {
+            padding: 0.95rem 1.85rem;
+            font-size: 1rem;
+        }
+
+        .btn.is-loading {
+            opacity: 0.75;
+            pointer-events: none;
+        }
+
+        /* ==========================================================================
+           3. CABEÇALHO E NAVEGAÇÃO
+           ========================================================================== */
+        .site-header {
             position: fixed;
             top: 0;
-            width: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(16px);
+            left: 0;
+            right: 0;
             z-index: 1000;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-            transition: 0.3s;
-        }
-        .nav-container {
+            background-color: rgba(11, 15, 20, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-on-dark);
+            height: 74px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: auto;
         }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 1.5rem;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .brand-symbol {
+            width: 40px;
+            height: 40px;
+            background-color: var(--bg-navy);
+            border: 1px solid rgba(235, 94, 40, 0.45);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .brand-logo:hover .brand-symbol {
+            border-color: var(--orange-main);
+            transform: scale(1.03);
+        }
+
+        .brand-symbol svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .brand-titles {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .brand-titles .name {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--white);
             letter-spacing: -0.02em;
         }
-        .logo span {
-            background: linear-gradient(125deg, #8B5CF6, #06B6D4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
+
+        .brand-titles .byline {
+            font-size: 0.7rem;
             font-weight: 500;
-            transition: 0.2s;
+            color: var(--gray-text);
+            letter-spacing: 0.02em;
         }
-        .nav-links a:hover {
-            color: #8B5CF6;
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+            list-style: none;
         }
-        .menu-icon {
+
+        .nav-menu a {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--gray-light);
+            transition: color 0.2s ease;
+            padding: 0.35rem 0;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a:focus-visible {
+            color: var(--orange-light);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .header-actions .btn {
+            padding: 0.6rem 1.15rem;
+            font-size: 0.88rem;
+        }
+
+        .mobile-menu-btn {
             display: none;
-            font-size: 1.8rem;
+            background: var(--bg-navy);
+            border: 1px solid var(--border-on-dark);
+            color: var(--white);
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-sm);
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
         }
-        @media (max-width: 800px) {
-            .nav-links {
+
+        .mobile-menu-btn:focus-visible {
+            outline: 2px solid var(--orange-light);
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-menu-btn {
+                display: inline-flex;
+            }
+
+            .nav-wrapper {
                 position: fixed;
-                top: 70px;
-                left: -100%;
-                flex-direction: column;
-                background: #111827ee;
-                backdrop-filter: blur(20px);
-                width: 70%;
-                height: calc(100vh - 70px);
-                padding: 2rem;
-                transition: 0.3s;
-                gap: 1.8rem;
-                border-right: 1px solid #8B5CF6;
-            }
-            .nav-links.active {
+                top: 74px;
                 left: 0;
+                right: 0;
+                background-color: var(--bg-dark);
+                border-bottom: 1px solid var(--border-on-dark);
+                padding: 1.5rem;
+                display: none;
+                flex-direction: column;
+                gap: 1.25rem;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             }
-            .menu-icon {
+
+            .nav-wrapper.is-open {
+                display: flex;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.85rem;
+                width: 100%;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-menu a {
                 display: block;
+                font-size: 1rem;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             }
-            .container {
-                padding: 0 1.5rem;
+
+            .header-actions {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.75rem;
             }
-            .section-title {
-                font-size: 2rem;
+
+            .header-actions .btn {
+                width: 100%;
+                padding: 0.85rem 1.2rem;
+                font-size: 0.95rem;
             }
         }
 
-        /* hero com efeito luz */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
+        @media (min-width: 1025px) {
+            .nav-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex: 1;
+                margin-left: 2.5rem;
+            }
+        }
+
+        /* ==========================================================================
+           4. HERO — PRIMEIRA SEÇÃO DA PÁGINA
+           ========================================================================== */
+        .hero-section {
+            padding-top: 8.5rem;
+            padding-bottom: 5.5rem;
+            background-color: var(--bg-dark);
+            border-bottom: 1px solid var(--border-on-dark);
             position: relative;
             overflow: hidden;
         }
-        .hero-glow {
+
+        .hero-section::before {
+            content: '';
             position: absolute;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(139,92,246,0.3) 0%, rgba(6,182,212,0) 70%);
-            top: -20%;
-            right: -10%;
-            filter: blur(70px);
-            z-index: 0;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .floating-card {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            top: -120px;
+            right: -120px;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(235, 94, 40, 0.12) 0%, transparent 70%);
+            pointer-events: none;
         }
 
-        /* grade diferencial */
-        .grid-3, .grid-4, .grid-solucoes {
+        .hero-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .diff-card, .segment-card, .solution-card, .testimonial-card, .why-card {
-            background: #111827;
-            padding: 1.8rem;
-            border-radius: 1.5rem;
-            transition: all 0.3s;
-            border: 1px solid #1f2937;
-        }
-        .diff-card i, .segment-card i, .solution-card i {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
+            grid-template-columns: 1.05fr 1.15fr;
+            gap: 3.5rem;
+            align-items: center;
         }
 
-        /* filtros portfolio */
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-bottom: 2.5rem;
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            background-color: var(--bg-navy);
+            border: 1px solid rgba(235, 94, 40, 0.35);
+            color: var(--orange-light);
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
-        .filter-btn {
-            background: #1e293b;
-            border: none;
-            padding: 0.5rem 1.5rem;
-            border-radius: 3rem;
-            color: #cbd5e1;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.2s;
+
+        .hero-eyebrow span.dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--orange-main);
         }
-        .filter-btn.active, .filter-btn:hover {
-            background: #8B5CF6;
-            color: white;
+
+        .hero-title {
+            font-size: clamp(2.25rem, 4.2vw, 3.35rem);
+            font-weight: 800;
+            line-height: 1.12;
+            letter-spacing: -0.03em;
+            color: var(--white);
+            margin-bottom: 1.25rem;
         }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+
+        .hero-title .highlight {
+            color: var(--orange-main);
         }
-        .portfolio-item {
-            background: #0F172A;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
+
+        .hero-subtitle {
+            font-size: 1.12rem;
+            color: var(--gray-light);
+            line-height: 1.65;
+            margin-bottom: 1.15rem;
+            max-width: 580px;
         }
-        .mockup-img {
-            background: linear-gradient(145deg, #1E293B, #0B0F19);
-            height: 200px;
+
+        .hero-support {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--orange-light);
+            margin-bottom: 2rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #8B5CF6;
-            border-bottom: 2px solid #334155;
+            gap: 0.5rem;
         }
 
-        /* timeline */
-        .timeline {
+        .hero-ctas {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
-        .step {
-            flex: 1;
-            min-width: 150px;
-            background: rgba(17,24,39,0.7);
-            backdrop-filter: blur(4px);
-            border-radius: 2rem;
-            padding: 1.5rem;
+
+        .hero-meta-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-on-dark);
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        .hero-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .hero-meta-item svg {
+            color: var(--orange-main);
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Hero Product Browser Mockup */
+        .hero-visual {
+            position: relative;
+        }
+
+        .browser-frame {
+            background-color: var(--bg-navy);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-dark);
+        }
+
+        .browser-bar {
+            background-color: #080C11;
+            padding: 0.7rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-on-dark);
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .browser-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .browser-dots span:first-child { background-color: var(--orange-main); }
+        .browser-dots span:nth-child(2) { background-color: var(--orange-light); }
+
+        .browser-address {
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            background-color: var(--bg-navy);
+            padding: 0.25rem 0.85rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-on-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .browser-screen {
+            position: relative;
+            background-color: var(--bg-dark);
+        }
+
+        .browser-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-caption {
+            margin-top: 0.75rem;
+            font-size: 0.78rem;
+            color: var(--gray-text);
             text-align: center;
         }
 
+        @media (max-width: 992px) {
+            .hero-section {
+                padding-top: 7rem;
+                padding-bottom: 4rem;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero-subtitle {
+                max-width: 100%;
+            }
+        }
+
+        /* ==========================================================================
+           5. SEÇÃO DE PROBLEMAS E BENEFÍCIOS
+           ========================================================================== */
+        .benefits-message-box {
+            background-color: var(--bg-navy);
+            color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem 2.25rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            border-left: 4px solid var(--orange-main);
+        }
+
+        .benefits-message-box p {
+            font-size: 1.05rem;
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        .benefits-message-box strong {
+            color: var(--white);
+            display: block;
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .benefit-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-on-light);
+            border-radius: var(--radius-md);
+            padding: 1.85rem;
+            box-shadow: var(--shadow-light);
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--orange-main);
+            transform: translateY(-2px);
+        }
+
+        .icon-box {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background-color: rgba(235, 94, 40, 0.1);
+            color: var(--orange-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.15rem;
+        }
+
+        .icon-box svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark-heading);
+            margin-bottom: 0.55rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.94rem;
+            color: var(--text-dark-body);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 960px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .benefits-message-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           6. FUNCIONALIDADES DO AION ERP (CARDS + GALERIA INTERATIVA DE TELAS REAIS)
+           ========================================================================== */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            background-color: var(--bg-navy);
+            border: 1px solid var(--border-on-dark);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .module-card:hover {
+            border-color: rgba(235, 94, 40, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .module-thumb {
+            position: relative;
+            background-color: #070A0E;
+            border-bottom: 1px solid var(--border-on-dark);
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+            cursor: pointer;
+        }
+
+        .module-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top left;
+            transition: transform 0.3s ease;
+        }
+
+        .module-card:hover .module-thumb img {
+            transform: scale(1.02);
+        }
+
+        .module-zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(11, 15, 20, 0.85);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 0.74rem;
+            font-weight: 600;
+            padding: 0.28rem 0.65rem;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .module-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .module-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background-color: rgba(235, 94, 40, 0.14);
+            color: var(--orange-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .module-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .module-header h3 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .module-body p {
+            font-size: 0.92rem;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .modules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           7. UM SISTEMA PARA DIVERSOS SEGMENTOS
+           ========================================================================== */
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .segment-card {
+            background-color: var(--gray-light);
+            border: 1px solid var(--border-on-light);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .segment-card:hover {
+            border-color: var(--orange-main);
+            background-color: var(--white);
+            box-shadow: var(--shadow-light);
+        }
+
+        .segment-card h3 {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--text-dark-heading);
+            margin-bottom: 0.5rem;
+        }
+
+        .segment-card p {
+            font-size: 0.92rem;
+            color: var(--text-dark-body);
+            line-height: 1.58;
+        }
+
+        @media (max-width: 960px) {
+            .segments-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .segments-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           8. COMO FUNCIONA (JORNADA EM 3 ETAPAS)
+           ========================================================================== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .step-card {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-on-dark);
+            border-radius: var(--radius-md);
+            padding: 2.25rem 1.85rem;
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: var(--orange-main);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.65rem;
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 860px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+        }
+
+        /* ==========================================================================
+           9. DIFERENCIAIS & APRESENTAÇÃO INTERATIVA DA ARQUITETURA
+           ========================================================================== */
+        .differentials-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .diff-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.15rem;
+        }
+
+        .diff-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-on-light);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .diff-item-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background-color: rgba(235, 94, 40, 0.12);
+            color: var(--orange-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .diff-item h3 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--text-dark-heading);
+            margin-bottom: 0.25rem;
+        }
+
+        .diff-item p {
+            font-size: 0.9rem;
+            color: var(--text-dark-body);
+        }
+
+        .showcase-panel {
+            background-color: var(--bg-navy);
+            color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--border-on-dark);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .showcase-panel h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-panel > p {
+            font-size: 0.92rem;
+            color: var(--gray-text);
+            margin-bottom: 1.25rem;
+        }
+
+        .showcase-img-wrap {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--border-on-dark);
+            margin-bottom: 1.25rem;
+            background: var(--bg-dark);
+        }
+
+        .showcase-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.85rem;
+        }
+
+        .showcase-badge {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-on-dark);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 0.9rem;
+            font-size: 0.84rem;
+            color: var(--gray-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .showcase-badge svg {
+            color: var(--orange-main);
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 960px) {
+            .differentials-layout {
+                grid-template-columns: 1fr;
+            }
+            .showcase-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           10. PLANOS E CONDIÇÕES COMERCIAIS
+           ========================================================================== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .plan-card {
+            background-color: var(--bg-navy);
+            border: 1px solid var(--border-on-dark);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .plan-card.featured {
+            border: 2px solid var(--orange-main);
+            box-shadow: 0 16px 40px rgba(235, 94, 40, 0.14);
+        }
+
+        .plan-tag {
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.3rem 0.75rem;
+            border-radius: 99px;
+            background: rgba(235, 94, 40, 0.16);
+            color: var(--orange-light);
+            margin-bottom: 1rem;
+        }
+
+        .plan-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.35rem;
+        }
+
+        .plan-sub {
+            font-size: 0.92rem;
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-price-box {
+            background-color: rgba(11, 15, 20, 0.65);
+            border: 1px solid var(--border-on-dark);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .plan-price {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+
+        .plan-card.featured .plan-price {
+            color: var(--orange-light);
+        }
+
+        .plan-period {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            font-weight: 500;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .plan-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-size: 0.93rem;
+            color: var(--gray-light);
+        }
+
+        .plan-features li svg {
+            width: 18px;
+            height: 18px;
+            color: var(--orange-main);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .addon-card {
+            background-color: rgba(13, 23, 40, 0.65);
+            border: 1px solid var(--border-on-dark);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .addon-info h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+        }
+
+        .addon-info p {
+            font-size: 0.88rem;
+            color: var(--gray-text);
+        }
+
+        .addon-price {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .addon-price strong {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--orange-light);
+        }
+
+        .addon-price span {
+            font-size: 0.78rem;
+            color: var(--gray-text);
+        }
+
+        @media (max-width: 860px) {
+            .pricing-grid,
+            .addons-grid {
+                grid-template-columns: 1fr;
+            }
+            .addon-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .addon-price {
+                text-align: left;
+            }
+        }
+
+        /* ==========================================================================
+           12. PERGUNTAS FREQUENTES — FAQ
+           ========================================================================== */
+        .faq-container {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-on-light);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item.is-open {
+            border-color: var(--orange-main);
+            box-shadow: var(--shadow-light);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--text-dark-heading);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .faq-question:hover {
+            color: var(--orange-dark);
+        }
+
+        .faq-question:focus-visible {
+            outline: 2px solid var(--orange-main);
+            outline-offset: -2px;
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background-color: var(--gray-light);
+            color: var(--text-dark-heading);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.25s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .faq-item.is-open .faq-icon {
+            transform: rotate(180deg);
+            background-color: var(--orange-main);
+            color: var(--white);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 1.5rem 1.35rem;
+            font-size: 0.95rem;
+            color: var(--text-dark-body);
+            line-height: 1.65;
+            border-top: 1px solid #F1F5F9;
+            padding-top: 1rem;
+        }
+
+        .faq-item.is-open .faq-answer {
+            display: block;
+        }
+
+        /* ==========================================================================
+           13. CHAMADA FINAL PARA AÇÃO + FORMULÁRIO DE DEMONSTRAÇÃO
+           ========================================================================== */
+        .cta-final-section {
+            background-color: var(--bg-dark);
+            padding: 5.5rem 0;
+            border-bottom: 1px solid var(--border-on-dark);
+        }
+
+        .cta-final-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .cta-banner-box {
+            background-color: var(--bg-navy);
+            border: 1px solid rgba(235, 94, 40, 0.35);
+            border-radius: var(--radius-lg);
+            padding: 2.75rem 2.5rem;
+        }
+
+        .cta-banner-box h2 {
+            font-size: clamp(1.75rem, 3vw, 2.35rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner-box p {
+            font-size: 1.02rem;
+            color: var(--gray-text);
+            margin-bottom: 2rem;
+            line-height: 1.65;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-direct-list {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-on-dark);
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            font-size: 0.92rem;
+            color: var(--gray-light);
+        }
+
+        .contact-direct-list a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--gray-light);
+            transition: color 0.2s ease;
+        }
+
+        .contact-direct-list a:hover {
+            color: var(--orange-light);
+        }
+
+        /* Demo Form */
+        .demo-form-card {
+            background-color: var(--bg-navy);
+            border: 1px solid var(--border-on-dark);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+        }
+
+        .demo-form-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.35rem;
+        }
+
+        .demo-form-card > p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.15rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--gray-light);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-label .req {
+            color: var(--orange-light);
+        }
+
+        .form-control {
+            width: 100%;
+            background-color: var(--bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 0.95rem;
+            color: var(--white);
+            font-size: 0.92rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-control::placeholder {
+            color: #64748B;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--orange-main);
+            box-shadow: 0 0 0 3px rgba(235, 94, 40, 0.2);
+        }
+
+        .form-control.has-error {
+            border-color: #EF4444;
+        }
+
+        .error-msg {
+            display: none;
+            font-size: 0.78rem;
+            color: #F87171;
+            margin-top: 0.35rem;
+        }
+
+        .error-msg.visible {
+            display: block;
+        }
+
+        .form-feedback {
+            display: none;
+            margin-top: 1rem;
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .form-feedback.success {
+            display: block;
+            background-color: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: #34D399;
+        }
+
+        @media (max-width: 960px) {
+            .cta-final-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .cta-banner-box,
+            .demo-form-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* ==========================================================================
+           14. RODAPÉ
+           ========================================================================== */
+        .site-footer {
+            background-color: #070A0E;
+            color: var(--gray-text);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+            gap: 2.5rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border-on-dark);
+        }
+
+        .footer-brand p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            max-width: 320px;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange-light);
+        }
+
+        .footer-bottom {
+            padding-top: 1.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ==========================================================================
+           15. MODAIS (ACESSO AO SISTEMA E VISUALIZADOR DE TELAS)
+           ========================================================================== */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(7, 10, 14, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+        }
+
+        .modal-backdrop.is-open {
+            display: flex;
+        }
+
+        .modal-box {
+            background-color: var(--bg-navy);
+            border: 1px solid rgba(235, 94, 40, 0.4);
+            border-radius: var(--radius-lg);
+            max-width: 560px;
+            width: 100%;
+            padding: 2rem;
+            position: relative;
+            box-shadow: var(--shadow-dark);
+        }
+
+        .modal-box.modal-lg {
+            max-width: 1040px;
+            padding: 1.25rem;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .modal-close {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-on-dark);
+            color: var(--gray-text);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            color: var(--white);
+            border-color: var(--orange-main);
+        }
+
+        /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 900;
+            background-color: var(--orange-main);
+            color: var(--white);
+            width: 54px;
+            height: 54px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 99;
-            transition: 0.2s;
+            box-shadow: 0 6px 20px rgba(235, 94, 40, 0.4);
+            transition: background-color 0.2s ease, transform 0.2s ease;
         }
+
         .whatsapp-float:hover {
-            transform: scale(1.1);
-            background: #128C7E;
+            background-color: var(--orange-dark);
+            transform: translateY(-2px);
         }
-        footer {
-            background: #050a12;
-            padding: 3rem 0;
-            border-top: 1px solid #1e293b;
-        }
-        [data-reveal] {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s ease;
-        }
-        [data-reveal].revealed {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* Respeito à preferência por redução de movimento */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="nav-container">
-        <div class="logo">Aion <span>Labs</span></div>
-        <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
-        <div class="nav-links" id="navLinks">
-            <a href="#home">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#segmentos">Segmentos</a>
-            <a href="#portfolio">Portfólio</a>
-            <a href="#contato">Contato</a>
-        </div>
-    </div>
-</nav>
+    <!-- ========================================================================
+         3. CABEÇALHO E NAVEGAÇÃO
+         ======================================================================== -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#inicio" class="brand-logo" aria-label="Aion ERP - Início">
+                <div class="brand-symbol" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#EB5E28" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="#FF8C61" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="brand-titles">
+                    <span class="name">Aion ERP</span>
+                    <span class="byline">by AionLabs</span>
+                </div>
+            </a>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="hero-glow"></div>
-    <div class="container hero-content">
-        <div data-reveal>
-            <span class="gradient-text" style="font-weight: 500; letter-spacing: 2px;">INOVAÇÃO & TECNOLOGIA</span>
-            <h1 style="font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin: 1.5rem 0 1rem;">Transformamos Negócios em <span class="gradient-text">Presença Digital</span> de Alto Impacto</h1>
-            <p style="font-size: 1.2rem; color: #94A3B8; max-width: 650px; margin-bottom: 2rem;">Criamos sites modernos, rápidos e profissionais para empresas que desejam atrair mais clientes, fortalecer sua marca e aumentar suas vendas.</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="https://wa.me/5511951186928" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
-                <a href="#servicos" class="btn-outline-light"><i class="fas fa-arrow-right"></i> Solicitar orçamento</a>
+            <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="navWrapper" aria-label="Abrir menu de navegação">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="nav-wrapper" id="navWrapper">
+                <nav aria-label="Navegação principal">
+                    <ul class="nav-menu">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="#segmentos">Segmentos</a></li>
+                        <li><a href="#como-funciona">Como funciona</a></li>
+                        <li><a href="#planos">Planos</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button type="button" class="btn btn-secondary-dark" onclick="openAccessModal()">
+                        <i data-lucide="log-in" style="width:17px;height:17px;"></i>
+                        Acessar sistema
+                    </button>
+                    <a href="#demonstracao" class="btn btn-primary">
+                        <i data-lucide="calendar-check" style="width:17px;height:17px;"></i>
+                        Solicitar demonstração
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="floating-card" style="margin-top: 3rem; display: flex; justify-content: center;">
-            <div class="glass-card" style="padding: 0.8rem 1.5rem; display: inline-flex; gap: 2rem;">
-                <span><i class="fas fa-code"></i> Moderno</span>
-                <span><i class="fas fa-bolt"></i> Rápido</span>
-                <span><i class="fas fa-shield-alt"></i> Seguro</span>
+    </header>
+
+    <main>
+        <!-- ====================================================================
+             4. HERO — PRIMEIRA SEÇÃO DA PÁGINA
+             ==================================================================== -->
+        <section id="inicio" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-eyebrow">
+                        <span class="dot" aria-hidden="true"></span>
+                        <span>Um único sistema. Diversos segmentos.</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Gestão inteligente para o seu <span class="highlight">negócio crescer.</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        O Aion ERP reúne ferramentas de gestão em um único sistema, ajudando você a organizar clientes, produtos, vendas, estoque e financeiro.
+                    </p>
+
+                    <p class="hero-support">
+                        <i data-lucide="layers" style="width:18px;height:18px;flex-shrink:0;"></i>
+                        <span>Um único sistema. Diversos segmentos. Mais controle para sua empresa.</span>
+                    </p>
+
+                    <div class="hero-ctas">
+                        <a href="#funcionalidades" class="btn btn-secondary-dark btn-lg">
+                            <i data-lucide="layout-grid" style="width:19px;height:19px;"></i>
+                            Conhecer o sistema
+                        </a>
+                        <a href="#demonstracao" class="btn btn-primary btn-lg">
+                            <i data-lucide="message-square" style="width:19px;height:19px;"></i>
+                            Solicitar demonstração
+                        </a>
+                    </div>
+
+                    <div class="hero-meta-strip">
+                        <span class="hero-meta-item">
+                            <i data-lucide="check-circle-2"></i>
+                            Organize sua operação em um só lugar
+                        </span>
+                        <span class="hero-meta-item">
+                            <i data-lucide="database"></i>
+                            Banco de dados isolado por CNPJ
+                        </span>
+                        <span class="hero-meta-item">
+                            <i data-lucide="Sliders"></i>
+                            Módulos habilitados conforme sua rotina
+                        </span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="browser-frame">
+                        <div class="browser-bar">
+                            <div class="browser-dots" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="browser-address">
+                                <i data-lucide="lock" style="width:12px;height:12px;color:#EB5E28;"></i>
+                                <span>Aion ERP • Painel de Gestão (Dashboard)</span>
+                            </div>
+                            <div style="width:36px;"></div>
+                        </div>
+                        <div class="browser-screen">
+                            <img src="./assets/screenshots/dashboard.png" alt="Interface real do painel Dashboard do Aion ERP exibindo menu lateral de módulos e indicadores de faturamento, despesas e resultado líquido" width="1440" height="920" fetchpriority="high">
+                        </div>
+                    </div>
+                    <p class="hero-caption">
+                        Interface autêntica do Aion ERP em ambiente demonstrativo • Organize sua operação, acompanhe seus resultados e tenha mais controle sobre o seu negócio em um só lugar.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             5. SEÇÃO DE PROBLEMAS E BENEFÍCIOS
+             ==================================================================== -->
+        <section id="beneficios" class="section-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Organização & Controle</span>
+                    <h2 class="section-title">Mais organização. Menos complicação.</h2>
+                    <p class="section-desc">
+                        Gerenciar um negócio não precisa significar trabalhar com informações espalhadas em diferentes ferramentas.
+                    </p>
+                </div>
+
+                <div class="benefits-message-box">
+                    <div>
+                        <strong>Um único sistema. Diversos segmentos.</strong>
+                        <p>Organize sua operação, acompanhe seus resultados e tenha mais controle sobre o seu negócio em um só lugar, substituindo anotações soltas e controles paralelos por uma rotina estruturada.</p>
+                    </div>
+                    <a href="#demonstracao" class="btn btn-primary" style="flex-shrink:0;">
+                        Conhecer na prática
+                        <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+                    </a>
+                </div>
+
+                <div class="benefits-grid">
+                    <article class="benefit-card">
+                        <div class="icon-box" aria-hidden="true">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <h3>Centralização das informações</h3>
+                        <p>Reúna cadastros de clientes, catálogo de itens, histórico de vendas e movimentações financeiras em uma única base organizada.</p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <div class="icon-box" aria-hidden="true">
+                            <i data-lucide="clipboard-check"></i>
+                        </div>
+                        <h3>Mais organização na rotina operacional</h3>
+                        <p>Padronize o atendimento de balcão, o registro de entradas e saídas e o acompanhamento de compromissos com fluxos objetivos.</p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <div class="icon-box" aria-hidden="true">
+                            <i data-lucide="shopping-cart"></i>
+                        </div>
+                        <h3>Acompanhamento das vendas</h3>
+                        <p>Registre operações comerciais no PDV com agilidade, consulte vendas realizadas e visualize formas de pagamento utilizadas.</p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <div class="icon-box" aria-hidden="true">
+                            <i data-lucide="package-check"></i>
+                        </div>
+                        <h3>Controle de produtos e estoque</h3>
+                        <p>Acompanhe quantidades disponíveis, alertas de reposição e, quando habilitado, controle lotes, validades ou números de série/IMEI.</p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <div class="icon-box" aria-hidden="true">
+                            <i data-lucide="wallet"></i>
+                        </div>
+                        <h3>Visão das receitas e despesas</h3>
+                        <p>Consulte valores recebidos, contas a receber pendentes e despesas lançadas para compreender o balanço operacional do período.</p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <div class="icon-box" aria-hidden="true">
+                            <i data-lucide="monitor-smartphone"></i>
+                        </div>
+                        <h3>Acesso facilitado às informações</h3>
+                        <p>Consulte indicadores, cadastros e relatórios diretamente pelo navegador, com permissões de acesso definidas para cada perfil da equipe.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             6. FUNCIONALIDADES DO AION ERP
+             ==================================================================== -->
+        <section id="funcionalidades" class="section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Módulos do Sistema</span>
+                    <h2 class="section-title">Funcionalidades do Aion ERP</h2>
+                    <p class="section-desc">
+                        Conheça os módulos disponíveis na plataforma. Clique em qualquer captura de tela para ampliar a interface real do sistema.
+                    </p>
+                </div>
+
+                <div class="modules-grid">
+                    <!-- 1. Dashboard -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/dashboard.png', 'Dashboard — Visão geral e balanço operacional')">
+                            <img src="./assets/screenshots/dashboard.png" alt="Tela real do módulo Dashboard do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="layout-dashboard"></i></div>
+                                <h3>Dashboard</h3>
+                            </div>
+                            <p>Visualização dos principais indicadores e informações relevantes para a gestão, incluindo faturamento diário e mensal, despesas, resultado líquido e gráficos comparativos.</p>
+                        </div>
+                    </article>
+
+                    <!-- 2. Clientes -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/clientes.png', 'Clientes — Cadastro e consulta de clientes')">
+                            <img src="./assets/screenshots/clientes.png" alt="Tela real do módulo de Clientes do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="users"></i></div>
+                                <h3>Clientes</h3>
+                            </div>
+                            <p>Cadastro e organização das informações dos clientes, com busca rápida por nome, documento, telefone ou e-mail e exportação da listagem em PDF ou Excel.</p>
+                        </div>
+                    </article>
+
+                    <!-- 3. Produtos e serviços -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/produtos.png', 'Produtos e Serviços — Gerenciamento de catálogo')">
+                            <img src="./assets/screenshots/produtos.png" alt="Tela real do módulo de Serviços e Produtos do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="package"></i></div>
+                                <h3>Produtos e serviços</h3>
+                            </div>
+                            <p>Gerenciamento do catálogo de produtos e serviços oferecidos, organização por categorias, definição de preços de custo e venda e estoque mínimo.</p>
+                        </div>
+                    </article>
+
+                    <!-- 4. Estoque -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/estoque.png', 'Estoque — Acompanhamento de quantidades e saldos')">
+                            <img src="./assets/screenshots/estoque.png" alt="Tela real do módulo de Controle de Estoque do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="boxes"></i></div>
+                                <h3>Estoque</h3>
+                            </div>
+                            <p>Acompanhamento dos produtos e das quantidades disponíveis, ajustes de saldo, registro de entradas e suporte opcional a lotes/validades ou seriais/IMEI.</p>
+                        </div>
+                    </article>
+
+                    <!-- 5. Vendas -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/vendas_pdv.png', 'Vendas (PDV) — Registro de operações comerciais')">
+                            <img src="./assets/screenshots/vendas_pdv.png" alt="Tela real do módulo PDV e Vendas do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="shopping-bag"></i></div>
+                                <h3>Vendas</h3>
+                            </div>
+                            <p>Organização e consulta das operações comerciais registradas no Ponto de Venda (PDV), com vínculo de cliente, vendedor, descontos e múltiplas formas de pagamento.</p>
+                        </div>
+                    </article>
+
+                    <!-- 6. Contas a receber -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/contas_receber.png', 'Contas a Receber e Fiado — Controle de vencimentos e baixas')">
+                            <img src="./assets/screenshots/contas_receber.png" alt="Tela real do módulo de Fiado e Contas a Receber do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="hand-coins"></i></div>
+                                <h3>Contas a receber</h3>
+                            </div>
+                            <p>Acompanhamento dos valores previstos a receber, vendas a prazo (crediário/fiado), amortizações parciais ("Aver na Conta"), extrato por cliente e recibos DAV.</p>
+                        </div>
+                    </article>
+
+                    <!-- 7. Despesas -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/despesas.png', 'Despesas — Registro de saídas de caixa e boletos')">
+                            <img src="./assets/screenshots/despesas.png" alt="Tela real do módulo de Despesas do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="receipt"></i></div>
+                                <h3>Despesas</h3>
+                            </div>
+                            <p>Registro e acompanhamento das despesas da operação, classificadas por categoria, período e status de pagamento (pago ou pendente).</p>
+                        </div>
+                    </article>
+
+                    <!-- 8. Agendamentos -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/agendamentos.png', 'Agendamentos — Organização de serviços e compromissos')">
+                            <img src="./assets/screenshots/agendamentos.png" alt="Tela real do módulo de Agendamentos de Serviços do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="calendar-clock"></i></div>
+                                <h3>Agendamentos</h3>
+                            </div>
+                            <p>Organização dos serviços e compromissos, quando habilitados, com visões por dia, semana, mês ou lista geral, filtro por profissional e status do atendimento.</p>
+                        </div>
+                    </article>
+
+                    <!-- 9. Relatórios -->
+                    <article class="module-card">
+                        <div class="module-thumb" onclick="openImageModal('./assets/screenshots/relatorios.png', 'Relatórios — Consulta de informações gerenciais')">
+                            <img src="./assets/screenshots/relatorios.png" alt="Tela real do módulo de Relatórios do Aion ERP" loading="lazy" width="720" height="460">
+                            <span class="module-zoom-badge"><i data-lucide="maximize-2" style="width:13px;height:13px;"></i> Ampliar tela</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-header">
+                                <div class="module-icon"><i data-lucide="bar-chart-3"></i></div>
+                                <h3>Relatórios</h3>
+                            </div>
+                            <p>Consulta de informações para apoiar o acompanhamento do negócio, conforme os relatórios implementados: movimento diário, faturamento, vendas por produto, comissões, ganho x custo e despesas.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             7. UM SISTEMA PARA DIVERSOS SEGMENTOS
+             ==================================================================== -->
+        <section id="segmentos" class="section-white">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Multi-Segmento</span>
+                    <h2 class="section-title">Seu segmento é único. Sua gestão merece ser simples.</h2>
+                    <p class="section-desc">
+                        O Aion ERP foi pensado para apoiar diferentes tipos de negócio, com ferramentas de gestão que podem se adaptar à rotina de cada operação.
+                    </p>
+                </div>
+
+                <div class="segments-grid">
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="store"></i></div>
+                        <h3>Comércio e lojas</h3>
+                        <p>Ideal para operações que precisam de organização de clientes, produtos, vendas no PDV, controle de estoque e acompanhamento financeiro diário.</p>
+                    </article>
+
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="truck"></i></div>
+                        <h3>Distribuidoras</h3>
+                        <p>Apoia o controle de entradas de mercadorias, acompanhamento de lotes e validades, vendas registradas e gestão de contas a receber.</p>
+                    </article>
+
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="wrench"></i></div>
+                        <h3>Oficinas mecânicas</h3>
+                        <p>Auxilia no cadastro de peças e serviços, organização de comandas/ordens de serviço, vínculo de colaboradores e registro das vendas e despesas.</p>
+                    </article>
+
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="zap"></i></div>
+                        <h3>Autoelétricas</h3>
+                        <p>Ideal para operações que precisam de organização de clientes, produtos, vendas e financeiro, unificando peças utilizadas e serviços prestados.</p>
+                    </article>
+
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="sparkles"></i></div>
+                        <h3>Clínicas e estética</h3>
+                        <p>Permite organizar o cadastro de clientes, agendamentos de horários por profissional, serviços recorrentes e controle das receitas e despesas.</p>
+                    </article>
+
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="briefcase"></i></div>
+                        <h3>Prestadores de serviços</h3>
+                        <p>Facilita o gerenciamento do catálogo de serviços, agendamentos, cobranças recorrentes ou a prazo e acompanhamento de relatórios do negócio.</p>
+                    </article>
+
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="user-check"></i></div>
+                        <h3>Profissionais autônomos</h3>
+                        <p>Ideal para operações que precisam de organização de clientes, produtos, vendas e financeiro de maneira prática e centralizada em um único painel.</p>
+                    </article>
+
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="settings"></i></div>
+                        <h3>Empresas de manutenção</h3>
+                        <p>Apoia o registro de atendimentos, controle de peças em estoque, acompanhamento de números de série quando habilitado e organização financeira.</p>
+                    </article>
+
+                    <article class="segment-card">
+                        <div class="icon-box" aria-hidden="true"><i data-lucide="building-2"></i></div>
+                        <h3>Pequenas empresas em geral</h3>
+                        <p>Ideal para operações que precisam de organização de clientes, produtos, vendas e financeiro em uma plataforma moderna e objetiva.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             8. SEÇÃO "COMO FUNCIONA"
+             ==================================================================== -->
+        <section id="como-funciona" class="section-navy">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Jornada Simplificada</span>
+                    <h2 class="section-title">Como funciona</h2>
+                    <p class="section-desc">
+                        Uma jornada clara em três etapas para você avaliar, configurar e gerenciar a rotina da sua empresa.
+                    </p>
+                </div>
+
+                <div class="steps-grid">
+                    <article class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Conheça o Aion ERP</h3>
+                        <p>Entenda as funcionalidades e avalie se o sistema atende às necessidades do seu negócio por meio de uma apresentação comercial guiada.</p>
+                    </article>
+
+                    <article class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Configure sua operação</h3>
+                        <p>Organize os dados e cadastros conforme os recursos disponíveis e o processo de implantação oferecido, ativando o ambiente da sua empresa por CNPJ.</p>
+                    </article>
+
+                    <article class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Gerencie em um só lugar</h3>
+                        <p>Utilize as ferramentas habilitadas para acompanhar a rotina da empresa, registrando vendas, estoque, clientes e movimentações financeiras.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             9. DIFERENCIAIS & APRESENTAÇÃO DA ARQUITETURA REAL (SUBSTITUI PROVA SOCIAL FICTÍCIA)
+             ==================================================================== -->
+        <section id="diferenciais" class="section-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Por que escolher o Aion ERP</span>
+                    <h2 class="section-title">Tecnologia para simplificar a gestão.</h2>
+                    <p class="section-desc">
+                        Diferenciais sustentados pelas características reais da plataforma e pela arquitetura desenvolvida pela AionLabs.
+                    </p>
+                </div>
+
+                <div class="differentials-layout">
+                    <div class="diff-list">
+                        <div class="diff-item">
+                            <div class="diff-item-icon"><i data-lucide="layout"></i></div>
+                            <div>
+                                <h3>Interface organizada e intuitiva</h3>
+                                <p>Navegação clara por menu lateral retrátil, painéis objetivos e Ponto de Venda pensado para agilizar o registro das operações diárias.</p>
+                            </div>
+                        </div>
+
+                        <div class="diff-item">
+                            <div class="diff-item-icon"><i data-lucide="layers"></i></div>
+                            <div>
+                                <h3>Módulos de gestão em uma única plataforma</h3>
+                                <p>Cadastros, estoque, vendas, contas a receber, despesas, agendamentos e relatórios integrados no mesmo sistema.</p>
+                            </div>
+                        </div>
+
+                        <div class="diff-item">
+                            <div class="diff-item-icon"><i data-lucide="globe"></i></div>
+                            <div>
+                                <h3>Acesso pelo ambiente disponibilizado pelo sistema</h3>
+                                <p>Acesso via navegador com identificação da loja por CNPJ e login prefixado por empresa, disponível para computadores, notebooks e dispositivos móveis.</p>
+                            </div>
+                        </div>
+
+                        <div class="diff-item">
+                            <div class="diff-item-icon"><i data-lucide="refresh-cw"></i></div>
+                            <div>
+                                <h3>Evolução contínua do produto</h3>
+                                <p>Arquitetura centralizada que recebe melhorias constantes e permite habilitar recursos conforme a configuração contratada.</p>
+                            </div>
+                        </div>
+
+                        <div class="diff-item">
+                            <div class="diff-item-icon"><i data-lucide="headphones"></i></div>
+                            <div>
+                                <h3>Suporte conforme as condições comerciais oferecidas</h3>
+                                <p>Acompanhamento na implantação inicial e suporte em horário comercial para orientar o uso operacional da plataforma.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apresentação de tela de acesso e isolamento multicliente -->
+                    <div class="showcase-panel">
+                        <h3>Ambiente Configurado por Empresa</h3>
+                        <p>Cada empresa contratante acessa seu ambiente com identificação por CNPJ, banco de dados PostgreSQL configurado para a loja e níveis de permissão por usuário.</p>
+
+                        <div class="showcase-img-wrap">
+                            <img src="./assets/screenshots/login.png" alt="Tela real de Login e Primeiro Acesso por CNPJ do Aion ERP" loading="lazy" width="720" height="450">
+                        </div>
+
+                        <div class="showcase-highlights">
+                            <div class="showcase-badge">
+                                <i data-lucide="database"></i>
+                                <span>Banco PostgreSQL dedicado por CNPJ</span>
+                            </div>
+                            <div class="showcase-badge">
+                                <i data-lucide="key-round"></i>
+                                <span>Primeiro Acesso validado por CNPJ</span>
+                            </div>
+                            <div class="showcase-badge">
+                                <i data-lucide="shield"></i>
+                                <span>Controle de permissões por perfil</span>
+                            </div>
+                            <div class="showcase-badge">
+                                <i data-lucide="file-spreadsheet"></i>
+                                <span>Exportação de relatórios em PDF e Excel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             10. PLANOS E PREÇOS (VALORES COMERCIAIS REAIS PRESERVADOS)
+             ==================================================================== -->
+        <section id="planos" class="section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Investimento Comercial</span>
+                    <h2 class="section-title">Planos e condições transparentes</h2>
+                    <p class="section-desc">
+                        Conheça as condições oficiais de implantação, assinatura mensal e suporte técnico do Aion ERP.
+                    </p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Taxa Única de Implantação -->
+                    <div class="plan-card">
+                        <div>
+                            <span class="plan-tag">Taxa Única de Adesão</span>
+                            <h3>Implantação & Treinamento</h3>
+                            <p class="plan-sub">Configuração inicial do ambiente e orientação prática para a equipe.</p>
+
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ 300,00</span>
+                                <span class="plan-period">/ pagamento único</span>
+                            </div>
+
+                            <ul class="plan-features">
+                                <li><i data-lucide="check"></i> <span>Liberação de banco de dados exclusivo por CNPJ na nuvem</span></li>
+                                <li><i data-lucide="check"></i> <span>Auxílio nas configurações iniciais da empresa</span></li>
+                                <li><i data-lucide="check"></i> <span>Parametrização dos módulos disponíveis para o seu segmento</span></li>
+                                <li><i data-lucide="check"></i> <span>Orientação de cadastro de estoque, clientes e caixa</span></li>
+                                <li><i data-lucide="check"></i> <span>Treinamento prático para operadores e gestores</span></li>
+                            </ul>
+                        </div>
+
+                        <a href="#demonstracao" class="btn btn-secondary-dark" style="width:100%;">
+                            Solicitar implantação
+                            <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+                        </a>
+                    </div>
+
+                    <!-- Assinatura Mensal -->
+                    <div class="plan-card featured">
+                        <div>
+                            <span class="plan-tag">Assinatura Mensal</span>
+                            <h3>Mensalidade Aion ERP Cloud</h3>
+                            <p class="plan-sub">Licença da plataforma + Hospedagem Cloud + Suporte em horário comercial.</p>
+
+                            <div class="plan-price-box">
+                                <span class="plan-price">R$ 150,00</span>
+                                <span class="plan-period">/ por mês</span>
+                            </div>
+
+                            <ul class="plan-features">
+                                <li><i data-lucide="check"></i> <span>Acesso aos módulos contratados sem limite de vendas registradas</span></li>
+                                <li><i data-lucide="check"></i> <span>Suporte comercial incluso: Segunda a Sexta, das 08:00 às 18:00</span></li>
+                                <li><i data-lucide="check"></i> <span>Hospedagem em nuvem e manutenção do ambiente</span></li>
+                                <li><i data-lucide="check"></i> <span>Atualizações e melhorias contínuas da plataforma</span></li>
+                                <li><i data-lucide="check"></i> <span>Exportação de relatórios disponíveis em PDF e Excel</span></li>
+                            </ul>
+                        </div>
+
+                        <a href="#demonstracao" class="btn btn-primary" style="width:100%;">
+                            Solicitar demonstração e contratação
+                            <i data-lucide="check-circle" style="width:17px;height:17px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Condições adicionais reais da Tabela Oficial -->
+                <div class="addons-grid">
+                    <div class="addon-card">
+                        <div class="addon-info">
+                            <h4>Plantão Suporte 24 Horas (Opcional)</h4>
+                            <p>Cobertura adicional em horários noturnos, finais de semana e feriados (domingo a domingo) para operações que funcionam fora do horário comercial.</p>
+                        </div>
+                        <div class="addon-price">
+                            <strong>+ R$ 80,00</strong>
+                            <span>/ por mês</span>
+                        </div>
+                    </div>
+
+                    <div class="addon-card">
+                        <div class="addon-info">
+                            <h4>Alterações ou Customizações Sob Medida</h4>
+                            <p>Desenvolvimento de ajustes específicos, relatórios personalizados ou regras sob escopo mediante análise técnica da equipe AionLabs.</p>
+                        </div>
+                        <div class="addon-price">
+                            <strong>A partir de R$ 1.000,00</strong>
+                            <span>/ sob escopo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             12. PERGUNTAS FREQUENTES — FAQ
+             ==================================================================== -->
+        <section id="faq" class="section-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Dúvidas Comuns</span>
+                    <h2 class="section-title">Perguntas Frequentes (FAQ)</h2>
+                    <p class="section-desc">
+                        Respostas objetivas e transparentes sobre o funcionamento, os módulos e as condições reais do Aion ERP.
+                    </p>
+                </div>
+
+                <div class="faq-container">
+                    <!-- 1 -->
+                    <div class="faq-item is-open">
+                        <button type="button" class="faq-question" aria-expanded="true">
+                            <span>O que é o Aion ERP?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            O Aion ERP é um sistema de gestão empresarial em nuvem desenvolvido pela AionLabs para ajudar pequenas e médias empresas, empreendedores e prestadores de serviços a organizarem clientes, produtos, vendas, estoque, agendamentos e financeiro em uma única plataforma.
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Para quais tipos de negócio o sistema é indicado?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            É indicado para comércios e lojas em geral, distribuidoras, oficinas mecânicas, autoelétricas, clínicas e estética, prestadores de serviços, profissionais autônomos e empresas de manutenção que buscam centralizar o controle de clientes, catálogo de itens, vendas e rotinas financeiras.
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Quais funcionalidades estão disponíveis?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            O sistema conta com Dashboard de indicadores, cadastro de Clientes, Fornecedores e Colaboradores, catálogo de Produtos e Serviços, Controle de Estoque (com suporte configurável a lotes/validades e números de série/IMEI), Ponto de Venda (PDV), Contas a Receber / Fiado (com recibo DAV e amortizações parciais), Despesas, Agendamentos de serviços, controle de Mesas/Comandas, Serviços Recorrentes (mensalidades), Ações Promocionais e Relatórios gerenciais com exportação em PDF e Excel.
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Como funciona o acesso ao sistema?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            O acesso é realizado pelo navegador no ambiente disponibilizado para a sua empresa. No primeiro acesso, a loja é identificada pelo CNPJ cadastrado e o administrador define sua senha para o login prefixado da empresa (ex.: <code>adm.suaempresa</code>). A partir disso, o administrador pode criar usuários para sua equipe com permissões específicas por módulo.
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Como posso conhecer uma demonstração?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            Você pode clicar em "Solicitar demonstração" em qualquer ponto desta página para preencher o formulário rápido ou falar diretamente com nossa equipe comercial pelo WhatsApp. Apresentaremos o painel em funcionamento e tiraremos todas as dúvidas sobre a aderência ao seu negócio.
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Como funciona a contratação?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            A contratação é feita diretamente com nosso atendimento comercial, sem cobranças automáticas surpresa. Compreende a taxa única de adesão (R$ 300,00) — que inclui o provisionamento do ambiente por CNPJ, parametrização inicial dos módulos e treinamento — e a assinatura mensal de R$ 150,00/mês com suporte em horário comercial incluso.
+                        </div>
+                    </div>
+
+                    <!-- 7 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Existe suporte?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sim. A mensalidade padrão já inclui suporte técnico e operacional de segunda a sexta-feira, das 08:00 às 18:00. Para operações que necessitam de cobertura integral fora do horário comercial (noites, finais de semana e feriados), há a opção adicional do Plantão Suporte 24h.
+                        </div>
+                    </div>
+
+                    <!-- 8 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>O sistema emite nota fiscal?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            Não. Atualmente o Aion ERP é voltado ao controle gerencial e operacional interno (PDV, controle de estoque, financeiro, crediário/fiado e relatórios). O sistema emite comprovantes não fiscais de venda, recibos de pagamento e Documento Auxiliar de Venda (DAV), mas não realiza emissão direta de NF-e ou NFC-e junto à SEFAZ.
+                        </div>
+                    </div>
+
+                    <!-- 9 -->
+                    <div class="faq-item">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Meus dados ficam separados dos dados de outras empresas?</span>
+                            <span class="faq-icon"><i data-lucide="chevron-down" style="width:18px;height:18px;"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            Sim. Na arquitetura multicliente do Aion ERP, cada empresa contratante possui seu próprio banco de dados PostgreSQL (Neon) provisionado de forma independente e vinculado ao seu CNPJ e prefixo de login. Além disso, o sistema conta com autenticação com senhas criptografadas (bcrypt) e controle de permissões por perfil de usuário dentro de cada loja.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             13. CHAMADA FINAL PARA AÇÃO + FORMULÁRIO DE DEMONSTRAÇÃO
+             ==================================================================== -->
+        <section id="demonstracao" class="cta-final-section">
+            <div class="container cta-final-grid">
+                <div class="cta-banner-box">
+                    <span class="section-tag">Comece Agora</span>
+                    <h2>Sua empresa pode ter uma gestão mais organizada.</h2>
+                    <p>
+                        Conheça o Aion ERP e descubra como centralizar as principais rotinas do seu negócio em um só sistema.
+                    </p>
+
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/5511951186928?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20do%20sistema%20Aion%20ERP." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                            <i data-lucide="message-circle" style="width:19px;height:19px;"></i>
+                            Solicitar demonstração
+                        </a>
+                        <button type="button" class="btn btn-secondary-dark btn-lg" onclick="openAccessModal()">
+                            <i data-lucide="log-in" style="width:19px;height:19px;"></i>
+                            Acessar sistema
+                        </button>
+                    </div>
+
+                    <div class="contact-direct-list">
+                        <strong style="color:var(--white);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.04em;">Canais Comerciais Diretos:</strong>
+                        <a href="https://wa.me/5511951186928" target="_blank" rel="noopener noreferrer">
+                            <i data-lucide="phone" style="width:16px;height:16px;color:var(--orange-main);"></i>
+                            <span>WhatsApp Comercial: (11) 95118-6928</span>
+                        </a>
+                        <a href="mailto:contato@aionlabs.com.br">
+                            <i data-lucide="mail" style="width:16px;height:16px;color:var(--orange-main);"></i>
+                            <span>E-mail: contato@aionlabs.com.br</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulário com validação para agendar demonstração -->
+                <div class="demo-form-card">
+                    <h3>Agendar Demonstração Comercial</h3>
+                    <p>Preencha os dados abaixo para iniciar seu atendimento personalizado pelo WhatsApp comercial.</p>
+
+                    <form id="demoRequestForm" novalidate>
+                        <div class="form-group">
+                            <label for="leadName" class="form-label">Seu nome <span class="req">*</span></label>
+                            <input type="text" id="leadName" class="form-control" placeholder="Ex.: João Silva" required>
+                            <div class="error-msg" id="errLeadName">Por favor, informe o seu nome.</div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="leadCompany" class="form-label">Nome da empresa <span class="req">*</span></label>
+                                <input type="text" id="leadCompany" class="form-control" placeholder="Ex.: Silva Comércio" required>
+                                <div class="error-msg" id="errLeadCompany">Informe o nome da empresa ou negócio.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="leadSegment" class="form-label">Segmento <span class="req">*</span></label>
+                                <select id="leadSegment" class="form-control" required>
+                                    <option value="">Selecione o segmento</option>
+                                    <option value="Comércio e lojas">Comércio e lojas</option>
+                                    <option value="Distribuidoras">Distribuidoras</option>
+                                    <option value="Oficinas mecânicas">Oficinas mecânicas</option>
+                                    <option value="Autoelétricas">Autoelétricas</option>
+                                    <option value="Clínicas e estética">Clínicas e estética</option>
+                                    <option value="Prestadores de serviços">Prestadores de serviços</option>
+                                    <option value="Profissionais autônomos">Profissionais autônomos</option>
+                                    <option value="Empresas de manutenção">Empresas de manutenção</option>
+                                    <option value="Pequenas empresas em geral">Pequenas empresas em geral</option>
+                                </select>
+                                <div class="error-msg" id="errLeadSegment">Selecione o segmento da sua operação.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="leadPhone" class="form-label">WhatsApp / Telefone <span class="req">*</span></label>
+                            <input type="tel" id="leadPhone" class="form-control" placeholder="(11) 90000-0000" required>
+                            <div class="error-msg" id="errLeadPhone">Informe um telefone ou WhatsApp válido com DDD.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="leadNotes" class="form-label">O que você mais precisa organizar hoje? (Opcional)</label>
+                            <textarea id="leadNotes" class="form-control" rows="2" placeholder="Ex.: Controle de estoque, vendas no balcão, contas a receber..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" id="btnSubmitDemo" style="width:100%;">
+                            <i data-lucide="send" style="width:18px;height:18px;"></i>
+                            <span>Solicitar demonstração no WhatsApp</span>
+                        </button>
+
+                        <div class="form-feedback" id="demoFormFeedback" role="status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================================================
+         14. RODAPÉ
+         ======================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#inicio" class="brand-logo">
+                        <div class="brand-symbol" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#EB5E28" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="#FF8C61" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="brand-titles">
+                            <span class="name">Aion ERP</span>
+                            <span class="byline">by AionLabs</span>
+                        </div>
+                    </a>
+                    <p>
+                        Um único sistema. Diversos segmentos. Organize sua operação, acompanhe seus resultados e tenha mais controle sobre o seu negócio em um só lugar.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="#segmentos">Segmentos</a></li>
+                        <li><a href="#como-funciona">Como funciona</a></li>
+                        <li><a href="#planos">Planos e Preços</a></li>
+                        <li><a href="#faq">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Sistema & Legal</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#acessar" onclick="openAccessModal(); return false;">
+                                <i data-lucide="log-in" style="width:14px;height:14px;color:var(--orange-main);"></i>
+                                Acessar sistema
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#demonstracao">
+                                <i data-lucide="calendar" style="width:14px;height:14px;color:var(--orange-main);"></i>
+                                Solicitar demonstração
+                            </a>
+                        </li>
+                        <li><a href="./politica-de-privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="./termos-de-uso.html">Termos de Uso</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contato Comercial</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://wa.me/5511951186928" target="_blank" rel="noopener noreferrer">
+                                <i data-lucide="phone" style="width:15px;height:15px;color:var(--orange-main);"></i>
+                                (11) 95118-6928
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:contato@aionlabs.com.br">
+                                <i data-lucide="mail" style="width:15px;height:15px;color:var(--orange-main);"></i>
+                                contato@aionlabs.com.br
+                            </a>
+                        </li>
+                        <li style="font-size:0.85rem;color:var(--gray-text);margin-top:0.4rem;">
+                            Atendimento Seg. a Sex. das 08:00 às 18:00
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© <span id="currentYear">2026</span> <strong>Aion ERP — by AionLabs</strong>. Todos os direitos reservados.</span>
+                <span>Sistema de Gestão Empresarial / ERP SaaS</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão flutuante comercial discreto -->
+    <a href="https://wa.me/5511951186928?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20o%20Aion%20ERP." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar com consultor no WhatsApp">
+        <i data-lucide="message-circle" style="width:26px;height:26px;"></i>
+    </a>
+
+    <!-- ========================================================================
+         MODAL DE ACESSO AO SISTEMA (SEM INVENTAR URLs EXTERNAS)
+         ======================================================================== -->
+    <div class="modal-backdrop" id="accessModal" role="dialog" aria-modal="true" aria-labelledby="accessModalTitle">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="accessModalTitle">Acessar o Aion ERP</h3>
+                <button type="button" class="modal-close" onclick="closeAccessModal()" aria-label="Fechar janela">
+                    <i data-lucide="x" style="width:18px;height:18px;"></i>
+                </button>
+            </div>
+
+            <p style="font-size:0.94rem;color:var(--gray-light);margin-bottom:1.25rem;line-height:1.6;">
+                O painel operacional do <strong>Aion ERP</strong> utiliza ambientes isolados por empresa (CNPJ). Informe o endereço do ambiente da sua loja configurado na implantação ou acesse seu servidor local:
+            </p>
+
+            <form id="erpAccessForm" onsubmit="handleErpAccess(event)">
+                <div class="form-group">
+                    <label for="erpEnvUrl" class="form-label">Endereço do ambiente da sua empresa ou servidor local</label>
+                    <input type="text" id="erpEnvUrl" class="form-control" placeholder="Ex.: http://localhost:3000/index.html" required>
+                    <div class="error-msg" id="errErpEnvUrl">Informe um endereço válido (ex.: http://localhost:3000/index.html).</div>
+                </div>
+
+                <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.25rem;">
+                    <button type="submit" class="btn btn-primary" style="flex:1;">
+                        <i data-lucide="external-link" style="width:17px;height:17px;"></i>
+                        Ir para Tela de Login
+                    </button>
+                    <a href="http://localhost:3000/index.html" class="btn btn-secondary-dark">
+                        Ambiente Local (:3000)
+                    </a>
+                </div>
+            </form>
+
+            <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border-on-dark);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;font-size:0.85rem;color:var(--gray-text);">
+                <span>Ainda não possui ambiente configurado?</span>
+                <a href="#demonstracao" onclick="closeAccessModal()" style="color:var(--orange-light);font-weight:600;">Solicitar implantação →</a>
             </div>
         </div>
     </div>
-</section>
 
-<!-- Especialistas -->
-<section style="background: #111827;">
-    <div class="container">
-        <div data-reveal><h2 class="section-title">Especialistas em <span class="gradient-text">Sites Profissionais</span></h2></div>
-        <div data-reveal><p class="section-sub">Desenvolvemos sites personalizados para empresas que desejam crescer no ambiente digital. Projetos modernos, rápidos, seguros e preparados para gerar resultados reais.</p></div>
-        <div class="grid-3" data-reveal>
-            <div class="diff-card"><i class="fas fa-palette"></i><h3>Design exclusivo</h3><p>Cada projeto com identidade única e refinada.</p></div>
-            <div class="diff-card"><i class="fas fa-tachometer-alt"></i><h3>Alta performance</h3><p>Velocidade e otimização para melhor experiência.</p></div>
-            <div class="diff-card"><i class="fas fa-chart-line"></i><h3>SEO otimizado</h3><p>Estrutura pensada para rankeamento no Google.</p></div>
-            <div class="diff-card"><i class="fab fa-whatsapp"></i><h3>Integração com WhatsApp</h3><p>Atendimento direto e conversão facilitada.</p></div>
-            <div class="diff-card"><i class="fas fa-server"></i><h3>Hospedagem simplificada</h3><p>Infraestrutura robusta e gerenciável.</p></div>
-            <div class="diff-card"><i class="fas fa-tasks"></i><h3>Painéis personalizados</h3><p>Gestão de conteúdo intuitiva.</p></div>
-            <div class="diff-card"><i class="fas fa-database"></i><h3>Banco de dados integrado</h3><p>Supabase ou soluções modernas.</p></div>
-            <div class="diff-card"><i class="fas fa-headset"></i><h3>Suporte contínuo</h3><p>Equipe sempre disponível.</p></div>
+    <!-- ========================================================================
+         MODAL DE AMPLIAÇÃO DAS CAPTURAS DE TELA REAIS DO SISTEMA
+         ======================================================================== -->
+    <div class="modal-backdrop" id="imageModal" role="dialog" aria-modal="true" aria-labelledby="imageModalTitle" onclick="if(event.target === this) closeImageModal()">
+        <div class="modal-box modal-lg">
+            <div class="modal-header">
+                <h3 id="imageModalTitle" style="font-size:1.05rem;">Visualização da Interface</h3>
+                <button type="button" class="modal-close" onclick="closeImageModal()" aria-label="Fechar visualização">
+                    <i data-lucide="x" style="width:18px;height:18px;"></i>
+                </button>
+            </div>
+            <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border-on-dark);background:#070A0E;">
+                <img id="imageModalTarget" src="" alt="Captura de tela ampliada do módulo do Aion ERP" style="width:100%;height:auto;max-height:78vh;object-fit:contain;">
+            </div>
         </div>
     </div>
-</section>
 
-<!-- Segmentos -->
-<section id="segmentos">
-    <div class="container">
-        <h2 class="section-title" data-reveal>Soluções para <span class="gradient-text">Diversos Segmentos</span></h2>
-        <div class="grid-3" id="segmentGrid" data-reveal>
-            <!-- cards serão populados via JS para manutenção -->
-        </div>
-    </div>
-</section>
+    <!-- ========================================================================
+         SCRIPTS DE INTERAÇÃO, ACESSIBILIDADE E VALIDAÇÃO
+         ======================================================================== -->
+    <script>
+        // 1. Inicializar ícones Lucide e ano dinâmico
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        if (window.lucide) {
+            lucide.createIcons();
+        }
 
-<!-- Qual solução sua empresa precisa? -->
-<section style="background: #0B0F19;" id="servicos">
-    <div class="container">
-        <h2 class="section-title" data-reveal>Qual solução sua empresa <span class="gradient-text">precisa?</span></h2>
-        <div class="grid-solucoes" data-reveal id="solutionsGrid"></div>
-    </div>
-</section>
+        // 2. Menu Responsivo Mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navWrapper = document.getElementById('navWrapper');
 
-<!-- Por que investir -->
-<section>
-    <div class="container">
-        <h2 class="section-title" data-reveal>Por que investir em um <span class="gradient-text">site profissional?</span></h2>
-        <div class="grid-3" data-reveal id="whyGrid"></div>
-    </div>
-</section>
+        if (mobileMenuBtn && navWrapper) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = navWrapper.classList.toggle('is-open');
+                mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            });
 
-<!-- Portfólio com filtros -->
-<section id="portfolio" style="background:#111827">
-    <div class="container">
-        <h2 class="section-title" data-reveal>Projetos que <span class="gradient-text">Geram Resultados</span></h2>
-        <div class="filter-buttons" id="filterButtons"></div>
-        <div class="portfolio-grid" id="portfolioGrid"></div>
-    </div>
-</section>
+            navWrapper.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('click', () => {
+                    navWrapper.classList.remove('is-open');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
 
-<!-- Depoimentos -->
-<section>
-    <div class="container">
-        <h2 class="section-title" data-reveal>O que nossos <span class="gradient-text">clientes dizem</span></h2>
-        <div class="grid-3" id="testimonialsGrid" data-reveal></div>
-    </div>
-</section>
+        // 3. Acordeão de Perguntas Frequentes (FAQ)
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('is-open');
 
-<!-- Como funciona timeline -->
-<section style="background: radial-gradient(ellipse at 30% 40%, #111827, #070b12);">
-    <div class="container">
-        <h2 class="section-title" data-reveal>Como <span class="gradient-text">Funciona</span></h2>
-        <div class="timeline" data-reveal id="timelineSteps"></div>
-    </div>
-</section>
+                // Fecha outros itens para manter leitura limpa
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    other.classList.remove('is-open');
+                    const q = other.querySelector('.faq-question');
+                    if (q) q.setAttribute('aria-expanded', 'false');
+                });
 
-<!-- Call to action final -->
-<section>
-    <div class="container">
-        <div class="glass-card" style="padding: 3rem; text-align: center;" data-reveal>
-            <h2 style="font-size: 2rem;">Pronto para colocar sua empresa em destaque na internet?</h2>
-            <p style="color:#94A3B8; margin: 1rem 0 2rem;">Solicite um orçamento sem compromisso e descubra como podemos criar um site moderno e profissional para o seu negócio.</p>
-            <a href="https://wa.me/5511951186928" target="_blank" class="btn-primary" style="font-size: 1.1rem;"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
-        </div>
-    </div>
-</section>
-
-<footer id="contato">
-    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
-        <div><h3>Aion Labs</h3><p style="color:#94A3B8;">Desenvolvimento de Sites Profissionais<br>Atendimento para todo o Brasil<br>📍 São Paulo - SP, Bairro Sé</p></div>
-        <div><h4>Contato</h4><p><i class="fab fa-whatsapp"></i> (11) 95118-6928</p><p><i class="far fa-envelope"></i> contato@aionlabs.com.br</p></div>
-        <div><h4>Links rápidos</h4><p><a href="#home" style="color:#8B5CF6;">Início</a> | <a href="#servicos" style="color:#8B5CF6;">Serviços</a> | <a href="#segmentos" style="color:#8B5CF6;">Segmentos</a></p></div>
-    </div>
-    <div class="container" style="text-align: center; margin-top: 2rem; border-top: 1px solid #1e293b; padding-top: 1.5rem;"><span style="color:#64748b;">© 2025 Aion Labs — Tecnologia e Inovação</span></div>
-</footer>
-<a href="https://wa.me/5511951186928" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-
-<script>
-    // Data population
-    const segments = [
-        {nome:"Estéticas", desc:"Soluções para clínicas de estética e bem-estar", icon:"fas fa-spa"},
-        {nome:"Oficinas Mecânicas", desc:"Gestão de serviços e agendamentos", icon:"fas fa-wrench"},
-        {nome:"Auto Elétricas", desc:"Diagnóstico e catálogo de serviços", icon:"fas fa-car-battery"},
-        {nome:"Escritórios de Advocacia", desc:"Presença digital confiável e cases", icon:"fas fa-gavel"},
-        {nome:"Clínicas Odontológicas", desc:"Agendamentos e credibilidade", icon:"fas fa-tooth"},
-        {nome:"Personal Trainers", desc:"Landing page e captação de alunos", icon:"fas fa-dumbbell"},
-        {nome:"Imobiliárias", desc:"Vitrine imobiliária com filtros", icon:"fas fa-building"},
-        {nome:"Restaurantes", desc:"Cardápio digital e reservas", icon:"fas fa-utensils"},
-        {nome:"Distribuidoras", desc:"Catálogo B2B e sistema", icon:"fas fa-truck"},
-        {nome:"Pequenos Comércios", desc:"E-commerce e vitrine", icon:"fas fa-store"}
-    ];
-    const solutions = [
-        {nome:"Site Institucional", desc:"Apresente sua empresa de forma profissional.", icon:"fas fa-building"},
-        {nome:"Landing Page", desc:"Captação de leads e campanhas.", icon:"fas fa-chart-simple"},
-        {nome:"Catálogo Online", desc:"Exiba produtos e serviços.", icon:"fas fa-images"},
-        {nome:"Sistema Administrativo", desc:"Gestão de clientes e informações.", icon:"fas fa-users-gear"},
-        {nome:"Site com Banco de Dados", desc:"Integração com Supabase.", icon:"fas fa-database"},
-        {nome:"Site Personalizado", desc:"Projeto totalmente exclusivo.", icon:"fas fa-pen-ruler"}
-    ];
-    const whyList = [
-        "Mais credibilidade", "Mais clientes", "Atendimento automatizado", "Presença online 24 horas",
-        "Divulgação profissional", "Fortalecimento da marca", "Crescimento das vendas", "Melhor posicionamento no Google"
-    ];
-    const portfolioItems = [
-        {segmento:"Estéticas", titulo:"Beauty Med", cor:"#8B5CF6"}, {segmento:"Oficinas Mecânicas", titulo:"AutoCenter Pro"}, 
-        {segmento:"Escritórios de Advocacia", titulo:"Castro & Associados"}, {segmento:"Restaurantes", titulo:"Sabor Gourmet"},
-        {segmento:"Imobiliárias", titulo:"Lar Imóveis"}, {segmento:"Clínicas Odontológicas", titulo:"DentalVip"},
-        {segmento:"Personal Trainers", titulo:"FitMax"}, {segmento:"Distribuidoras", titulo:"LogSupply"}
-    ];
-    const testimonials = [
-        {nome:"Mariana Costa", texto:"A Aion Labs entregou um site incrível, nossa receita aumentou 40% em 3 meses.", estrelas:5, cargo:"CEO Estética Flor"},
-        {nome:"Rafael Oliveira", texto:"Profissionalismo e tecnologia de ponta. Interface moderna e suporte rápido.", estrelas:5, cargo:"Oficina Rodrigues"},
-        {nome:"Dra. Camila Sato", texto:"Meu consultório ganhou autoridade e pacientes via site. Recomendo!", estrelas:5, cargo:"Odontologia"}
-    ];
-    const steps = ["Conversa Inicial", "Planejamento", "Desenvolvimento", "Aprovação", "Publicação", "Suporte"];
-
-    function renderSegmentos() {
-        const container = document.getElementById('segmentGrid');
-        container.innerHTML = segments.map(seg => `
-            <div class="segment-card glass-card">
-                <i class="${seg.icon}"></i>
-                <h3>${seg.nome}</h3>
-                <p style="color:#94A3B8;">${seg.desc}</p>
-            </div>
-        `).join('');
-    }
-    function renderSolutions() {
-        document.getElementById('solutionsGrid').innerHTML = solutions.map(s => `
-            <div class="solution-card">
-                <i class="${s.icon}"></i>
-                <h3>${s.nome}</h3>
-                <p>${s.desc}</p>
-            </div>
-        `).join('');
-    }
-    function renderWhy() {
-        document.getElementById('whyGrid').innerHTML = whyList.map(item => `
-            <div class="why-card" style="display: flex; gap: 1rem; align-items: center;"><i class="fas fa-check-circle" style="color:#8B5CF6; font-size: 1.8rem;"></i><span style="font-weight:500;">${item}</span></div>
-        `).join('');
-    }
-    let activeFilter = "Todos";
-    function renderPortfolio(filter = "Todos") {
-        const filtered = filter === "Todos" ? portfolioItems : portfolioItems.filter(p => p.segmento === filter);
-        const grid = document.getElementById('portfolioGrid');
-        grid.innerHTML = filtered.map(item => `
-            <div class="portfolio-item">
-                <div class="mockup-img"><i class="fas fa-laptop-code"></i> <span style="margin-left:8px;">${item.titulo}</span></div>
-                <div style="padding: 1rem;"><p style="color:#cbd5e6;"><i class="fas fa-tag"></i> ${item.segmento}</p><h4>${item.titulo}</h4></div>
-            </div>
-        `).join('');
-    }
-    function renderFilters() {
-        const segmentsFilter = [...new Set(portfolioItems.map(p => p.segmento))];
-        const btns = ['Todos', ...segmentsFilter];
-        const container = document.getElementById('filterButtons');
-        container.innerHTML = btns.map(btn => `<button class="filter-btn ${activeFilter === btn ? 'active' : ''}" data-filter="${btn}">${btn}</button>`).join('');
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                activeFilter = btn.getAttribute('data-filter');
-                renderFilters();
-                renderPortfolio(activeFilter);
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
             });
         });
-    }
-    function renderTestimonials() {
-        document.getElementById('testimonialsGrid').innerHTML = testimonials.map(t => `
-            <div class="testimonial-card glass-card">
-                <div style="display:flex; gap:4px; margin-bottom: 1rem;">${Array(t.estrelas).fill('<i class="fas fa-star" style="color:#FBBF24;"></i>').join('')}</div>
-                <p>"${t.texto}"</p>
-                <h4 style="margin-top:1rem;">${t.nome}</h4>
-                <small style="color:#8B5CF6;">${t.cargo}</small>
-            </div>
-        `).join('');
-    }
-    function renderTimeline() {
-        document.getElementById('timelineSteps').innerHTML = steps.map((step, idx) => `
-            <div class="step glass-card">
-                <div style="font-size:2rem; font-weight:bold; color:#8B5CF6;">0${idx+1}</div>
-                <h3>${step}</h3>
-            </div>
-        `).join('');
-    }
-    
-    // Initialize all
-    renderSegmentos();
-    renderSolutions();
-    renderWhy();
-    renderFilters();
-    renderPortfolio("Todos");
-    renderTestimonials();
-    renderTimeline();
 
-    // menu mobile
-    const toggleBtn = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    toggleBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
-    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+        // 4. Modal de Acesso ao Sistema (Preserva URL salva pelo usuário ou redireciona para login local quando em localhost)
+        const accessModal = document.getElementById('accessModal');
+        const erpEnvUrlInput = document.getElementById('erpEnvUrl');
 
-    // Scroll reveal
-    const revealElements = document.querySelectorAll('[data-reveal]');
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                revealObserver.unobserve(entry.target);
+        function openAccessModal() {
+            const savedUrl = localStorage.getItem('aion_erp_login_url');
+            if (savedUrl) {
+                erpEnvUrlInput.value = savedUrl;
+            } else if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                erpEnvUrlInput.value = 'http://localhost:3000/index.html';
+            }
+            accessModal.classList.add('is-open');
+            setTimeout(() => erpEnvUrlInput.focus(), 50);
+        }
+
+        function closeAccessModal() {
+            accessModal.classList.remove('is-open');
+        }
+
+        function handleErpAccess(e) {
+            e.preventDefault();
+            const errEl = document.getElementById('errErpEnvUrl');
+            let rawUrl = erpEnvUrlInput.value.trim();
+
+            if (!rawUrl) {
+                erpEnvUrlInput.classList.add('has-error');
+                errEl.classList.add('visible');
+                return;
+            }
+
+            if (!/^https?:\/\//i.test(rawUrl) && !rawUrl.startsWith('/')) {
+                rawUrl = 'https://' + rawUrl;
+            }
+
+            erpEnvUrlInput.classList.remove('has-error');
+            errEl.classList.remove('visible');
+            localStorage.setItem('aion_erp_login_url', rawUrl);
+            window.location.href = rawUrl;
+        }
+
+        // 5. Modal de Visualização de Telas Reais
+        const imageModal = document.getElementById('imageModal');
+        const imageModalTarget = document.getElementById('imageModalTarget');
+        const imageModalTitle = document.getElementById('imageModalTitle');
+
+        function openImageModal(src, title) {
+            imageModalTarget.src = src;
+            imageModalTitle.textContent = title || 'Visualização da Interface';
+            imageModal.classList.add('is-open');
+        }
+
+        function closeImageModal() {
+            imageModal.classList.remove('is-open');
+            imageModalTarget.src = '';
+        }
+
+        // Fechar modais com tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAccessModal();
+                closeImageModal();
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-    revealElements.forEach(el => revealObserver.observe(el));
-    // small trigger for first elements
-    window.dispatchEvent(new Event('scroll'));
-</script>
+
+        // 6. Validação do Formulário de Solicitação de Demonstração
+        const demoForm = document.getElementById('demoRequestForm');
+        const phoneInput = document.getElementById('leadPhone');
+
+        if (phoneInput) {
+            phoneInput.addEventListener('input', (e) => {
+                let digits = e.target.value.replace(/\D/g, '').slice(0, 11);
+                if (digits.length > 6) {
+                    e.target.value = `(${digits.slice(0,2)}) ${digits.slice(2, digits.length - 4)}-${digits.slice(-4)}`;
+                } else if (digits.length > 2) {
+                    e.target.value = `(${digits.slice(0,2)}) ${digits.slice(2)}`;
+                } else if (digits.length > 0) {
+                    e.target.value = `(${digits}`;
+                }
+            });
+        }
+
+        if (demoForm) {
+            demoForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nameEl = document.getElementById('leadName');
+                const companyEl = document.getElementById('leadCompany');
+                const segmentEl = document.getElementById('leadSegment');
+                const phoneEl = document.getElementById('leadPhone');
+                const notesEl = document.getElementById('leadNotes');
+                const submitBtn = document.getElementById('btnSubmitDemo');
+                const feedbackEl = document.getElementById('demoFormFeedback');
+
+                let valid = true;
+
+                const setFieldError = (inputEl, errId, isError) => {
+                    const errNode = document.getElementById(errId);
+                    if (isError) {
+                        inputEl.classList.add('has-error');
+                        if (errNode) errNode.classList.add('visible');
+                        valid = false;
+                    } else {
+                        inputEl.classList.remove('has-error');
+                        if (errNode) errNode.classList.remove('visible');
+                    }
+                };
+
+                setFieldError(nameEl, 'errLeadName', nameEl.value.trim().length < 2);
+                setFieldError(companyEl, 'errLeadCompany', companyEl.value.trim().length < 2);
+                setFieldError(segmentEl, 'errLeadSegment', !segmentEl.value);
+                setFieldError(phoneEl, 'errLeadPhone', phoneEl.value.replace(/\D/g, '').length < 10);
+
+                if (!valid) return;
+
+                submitBtn.classList.add('is-loading');
+
+                let msg = `Olá, equipe AionLabs! Gostaria de solicitar uma demonstração do *Aion ERP*.\n\n`;
+                msg += `*Nome:* ${nameEl.value.trim()}\n`;
+                msg += `*Empresa:* ${companyEl.value.trim()}\n`;
+                msg += `*Segmento:* ${segmentEl.value}\n`;
+                msg += `*WhatsApp:* ${phoneEl.value.trim()}\n`;
+                if (notesEl.value.trim()) {
+                    msg += `*Necessidade principal:* ${notesEl.value.trim()}\n`;
+                }
+
+                const waUrl = `https://wa.me/5511951186928?text=${encodeURIComponent(msg)}`;
+                window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+                feedbackEl.textContent = 'Solicitação preparada! Redirecionando para o atendimento comercial no WhatsApp...';
+                feedbackEl.className = 'form-feedback success';
+
+                setTimeout(() => {
+                    submitBtn.classList.remove('is-loading');
+                }, 600);
+            });
+        }
+    </script>
 </body>
 </html>
